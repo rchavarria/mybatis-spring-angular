@@ -21,17 +21,17 @@ import es.rchavarria.library.domain.CourseLevel;
 public class CourseMapperTest {  
   
     @Resource  
-    CourseMapper personaMapper;  
+    CourseMapper courseMapper;  
     
     @Test
     public void testListAllCourses() {
-        List<Course> courses = personaMapper.list();
+        List<Course> courses = courseMapper.list();
         assertEquals("only one course should exist", 1, courses.size());
     }  
     
     @Test
     public void testFirstCourseData() {
-        Course course = personaMapper.list().get(0);
+        Course course = courseMapper.list().get(0);
         
         assertEquals(1, course.getIdCourse());
         assertEquals("Title 1", course.getTitle());
