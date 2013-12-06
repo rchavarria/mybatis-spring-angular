@@ -20,11 +20,23 @@ public class CourseMapperTest {
   
     @Resource  
     CourseMapper personaMapper;  
-  
-    @Test  
+    
+    @Test
     public void testListAllCourses() {
         List<Course> courses = personaMapper.list();
         assertEquals("only one course should exist", 1, courses.size());
+    }  
+    
+    @Test
+    public void testFirstCourseData() {
+        Course course = personaMapper.list().get(0);
+        
+        assertEquals(1, course.getId_course());
+        assertEquals("Title 1", course.getTitle());
+        assertEquals("Teacher 1", course.getTeacher());
+        assertEquals("basic", course.getLevel());
+        assertEquals(12.5, course.getHoursLong(), 0.1);
+        assertEquals(true, course.isActive());
     }  
   
 }
