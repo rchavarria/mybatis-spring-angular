@@ -1,1 +1,1 @@
-INSERT INTO courses VALUES (1, 'Title 1', 'Teacher 1', 'basic', 12.5, TRUE);
+INSERT INTO courses VALUES (1, 'Title 1', 'Teacher 1', 'BASIC', 12.5, TRUE);

@@ -6,12 +6,14 @@ import java.util.List;
 
 import javax.annotation.Resource;  
   
+
 import org.junit.Test;  
 import org.junit.runner.RunWith;  
 import org.springframework.test.context.ContextConfiguration;  
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;  
 
 import es.rchavarria.library.domain.Course;
+import es.rchavarria.library.domain.CourseLevel;
   
 @SuppressWarnings("restriction")
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -34,7 +36,7 @@ public class CourseMapperTest {
         assertEquals(1, course.getIdCourse());
         assertEquals("Title 1", course.getTitle());
         assertEquals("Teacher 1", course.getTeacher());
-        assertEquals("basic", course.getLevel());
+        assertEquals(CourseLevel.BASIC, course.getLevel());
         assertEquals(12.5, course.getHoursLong(), 0.1);
         assertEquals(true, course.isActive());
     }  
