@@ -31,7 +31,7 @@ public class CourseMapperTest {
     public void testFirstCourseData() {
         Course course = personaMapper.list().get(0);
         
-        assertEquals(1, course.getId_course());
+        assertEquals(1, course.getIdCourse());
         assertEquals("Title 1", course.getTitle());
         assertEquals("Teacher 1", course.getTeacher());
         assertEquals("basic", course.getLevel());

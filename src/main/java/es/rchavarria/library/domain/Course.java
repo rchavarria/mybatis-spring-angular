@@ -2,18 +2,18 @@ package es.rchavarria.library.domain;
 
 public class Course {
 
-    private long id_course;
+    private long idCourse;
     private String title;
     private String teacher;
     private String level;
     private float hoursLong;
     private boolean active;
     
-    public long getId_course() {
-        return id_course;
+    public long getIdCourse() {
+        return idCourse;
     }
-    public void setId_course(long id_course) {
-        this.id_course = id_course;
+    public void setIdCourse(long idCourse) {
+        this.idCourse = idCourse;
     }
     public String getTitle() {
         return title;
