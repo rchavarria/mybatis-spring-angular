@@ -24,15 +24,18 @@ public class TeacherMapperTest {
     @Test
     public void testListAllCourses() {
         List<Teacher> teachers = teacherMapper.list();
-        assertEquals("only one teacher should exist", 1, teachers.size());
+        assertEquals("test-data.sql insterts 5 teachers", 5, teachers.size());
     }  
     
     @Test
-    public void testFirstCourseData() {
-        Teacher teacher = teacherMapper.list().get(0);
+    public void testFirstTeacherData() {
+        List<Teacher> teachers = teacherMapper.list();
         
-        assertEquals(1, teacher.getIdTeacher());
-        assertEquals("Teacher 1", teacher.getName());
+        for(int i = 0; i < teachers.size(); i++) {
+            Teacher teacher = teachers.get(i);
+            assertEquals(i, teacher.getIdTeacher());
+            assertEquals("Teacher " + (i + 1), teacher.getName());
+        }
     }  
   
 }
