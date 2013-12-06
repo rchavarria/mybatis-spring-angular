@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import es.rchavarria.library.domain.Course;
   
 @SuppressWarnings("restriction")
-@RunWith(SpringJUnit4ClassRunner.class)  
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:/test-mybatis-app-config.xml" })  
 public class CourseMapperTest {  
   
