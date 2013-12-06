@@ -1,0 +1,1 @@
+INSERT INTO courses VALUES 1, 'Title 1';
