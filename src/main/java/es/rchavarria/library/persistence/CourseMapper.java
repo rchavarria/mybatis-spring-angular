@@ -8,6 +8,6 @@ import es.rchavarria.library.domain.Course;
 
 public interface CourseMapper {
 
-    @Select("SELECT * FROM courses")
+    @Select("SELECT idCourse, title, level,hoursLong, active FROM courses")
     public List<Course> list();
 }
