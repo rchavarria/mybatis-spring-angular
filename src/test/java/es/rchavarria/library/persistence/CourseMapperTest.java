@@ -31,11 +31,11 @@ public class CourseMapperTest {
 
     @Test
     public void testFirstCourseData() {
-        Course course = courseMapper.list().get(0);
+        Course course = courseMapper.listWithTeachers().get(0);
         
         assertEquals(0, course.getIdCourse());
         assertEquals("Title 1", course.getTitle());
-//        assertEquals("Teacher 1", course.getTeacher().getName());
+        assertEquals("Teacher 1", course.getTeacher().getName());
         assertEquals(CourseLevel.BASIC, course.getLevel());
         assertEquals(12.5, course.getHoursLong(), 0.1);
         assertEquals(true, course.isActive());

@@ -11,13 +11,16 @@
         <id column="idCourse" property="idCourse" javaType="long"/>
         <result column="title" property="title" javaType="string"/>
         <result column="level" property="level" javaType="es.rchavarria.library.domain.CourseLevel"/>
-        <result column="hoursLong" property="hoursLong" javaType="long"/>
+        <result column="hoursLong" property="hoursLong" javaType="float"/>
         <result column="active" property="active" javaType="boolean"/>
-<!--         <association property="teacher" column="idTeacher" resultMap="es.rchavarria.library.persistence.TeacherMapper.teacherResult"/> -->
+        <association property="teacher" column="idTeacher" resultMap="es.rchavarria.library.persistence.TeacherMapper.teacherResult"/>
     </resultMap>
 
-    <select id="listWithTeachers" resultType="es.rchavarria.library.domain.Course">
-        SELECT idCourse, title, courses.idTeacher, level, hoursLong, active FROM courses INNER JOIN teachers ON teachers.idTeacher = courses.idCourse
+    <select id="listWithTeachers" resultMap="courseWithTeacher">
+        SELECT courses.*, teachers.* 
+        FROM courses 
+        INNER JOIN teachers 
+        ON teachers.idTeacher = courses.idTeacher
     </select>
 
 </mapper>
