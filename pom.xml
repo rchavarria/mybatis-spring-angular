@@ -113,36 +113,29 @@
         </dependency>
         
         <!-- dependencies for deploying -->
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-core</artifactId>
-            <version>${version.tomcat}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-logging-juli</artifactId>
-            <version>${version.tomcat}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-jasper</artifactId>
-            <version>${version.tomcat}</version>
-            <scope>runtime</scope>
-            <exclusions>
-                <exclusion>
-                    <artifactId>ecj</artifactId>
-                    <groupId>org.eclipse.jdt.core.compiler</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- jaxb -->
 <!--         <dependency> -->
-<!--             <groupId>javax.xml.bind</groupId> -->
-<!--             <artifactId>jaxb-api</artifactId> -->
-<!--             <version>2.2.9</version> -->
-<!--             <scope>runtime</scope> -->
+<!--             <groupId>org.apache.tomcat.embed</groupId> -->
+<!--             <artifactId>tomcat-embed-core</artifactId> -->
+<!--             <version>${version.tomcat}</version> -->
+<!--             <scope>provided</scope> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>org.apache.tomcat.embed</groupId> -->
+<!--             <artifactId>tomcat-embed-logging-juli</artifactId> -->
+<!--             <version>${version.tomcat}</version> -->
+<!--             <scope>provided</scope> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>org.apache.tomcat.embed</groupId> -->
+<!--             <artifactId>tomcat-embed-jasper</artifactId> -->
+<!--             <version>${version.tomcat}</version> -->
+<!--             <scope>provided</scope> -->
+<!--             <exclusions> -->
+<!--                 <exclusion> -->
+<!--                     <artifactId>ecj</artifactId> -->
+<!--                     <groupId>org.eclipse.jdt.core.compiler</groupId> -->
+<!--                 </exclusion> -->
+<!--             </exclusions> -->
 <!--         </dependency> -->
         <!-- servlets -->
         <dependency>
