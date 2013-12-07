@@ -7,4 +7,6 @@ import es.rchavarria.library.domain.Course;
 public interface CourseMapper {
 
     public List<Course> list();
+    
+    public Course findById(long idCourse);
 }

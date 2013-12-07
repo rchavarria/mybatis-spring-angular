@@ -13,11 +13,20 @@
                      resultMap="es.rchavarria.library.persistence.TeacherMapper.teacherResult"/>
     </resultMap>
 
-    <select id="list" resultMap="courseWithTeacher">
+    <sql id="selectCoursesWithTeachers">
         SELECT courses.*, teachers.*
         FROM courses 
         INNER JOIN teachers 
         ON teachers.idTeacher = courses.idTeacher
+    </sql>
+
+    <select id="list" resultMap="courseWithTeacher">
+        <include refid="selectCoursesWithTeachers"/>
+    </select>
+    
+    <select id="findById" resultMap="courseWithTeacher" parameterType="long">
+        <include refid="selectCoursesWithTeachers"/>
+        WHERE idCourse = #{idCourse}
     </select>
 
 </mapper>

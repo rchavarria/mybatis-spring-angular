@@ -31,7 +31,7 @@ public class CourseMapperTest {
 
     @Test
     public void testFirstCourseData() {
-        Course course = courseMapper.list().get(0);
+        Course course = courseMapper.findById(0);
         
         assertEquals(0, course.getIdCourse());
         assertEquals("Title 1", course.getTitle());
