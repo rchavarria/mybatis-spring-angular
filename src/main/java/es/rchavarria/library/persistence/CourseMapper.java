@@ -8,6 +8,6 @@ import es.rchavarria.library.domain.Course;
 
 public interface CourseMapper {
 
-    @Select("SELECT idCourse, title, level,hoursLong, active FROM courses")
+//    @Select("SELECT idCourse, title, courses.idTeacher, level, hoursLong, active FROM courses INNER JOIN teachers ON teachers.idTeacher = courses.idCourse")
     public List<Course> list();
 }

@@ -4,7 +4,7 @@ public class Course {
 
     private long idCourse;
     private String title;
-    private String teacher;
+    private Teacher teacher;
     private CourseLevel level;
     private float hoursLong;
     private boolean active;
@@ -21,10 +21,10 @@ public class Course {
     public void setTitle(String title) {
         this.title = title;
     }
-    public String getTeacher() {
+    public Teacher getTeacher() {
         return teacher;
     }
-    public void setTeacher(String teacher) {
+    public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
     public CourseLevel getLevel() {

@@ -8,6 +8,6 @@ import es.rchavarria.library.domain.Teacher;
 
 public interface TeacherMapper {
 
-    @Select("SELECT * FROM teachers")
+//    @Select("SELECT * FROM teachers")
     public List<Teacher> list();
 }

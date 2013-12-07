@@ -35,7 +35,7 @@ public class CourseMapperTest {
         
         assertEquals(0, course.getIdCourse());
         assertEquals("Title 1", course.getTitle());
-//        assertEquals("Teacher 1", course.getTeacher());
+//        assertEquals("Teacher 1", course.getTeacher().getName());
         assertEquals(CourseLevel.BASIC, course.getLevel());
         assertEquals(12.5, course.getHoursLong(), 0.1);
         assertEquals(true, course.isActive());
