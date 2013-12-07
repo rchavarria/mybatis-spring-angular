@@ -19,16 +19,16 @@ import es.rchavarria.library.domain.CourseLevel;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:/test-mybatis-app-config.xml" })  
 public class CourseMapperTest {  
-  
+
     @Resource  
     CourseMapper courseMapper;  
-    
+
     @Test
     public void testListAllCourses() {
         List<Course> courses = courseMapper.list();
         assertEquals("only one course should exist", 1, courses.size());
-    }  
-    
+    }
+
     @Test
     public void testFirstCourseData() {
         Course course = courseMapper.list().get(0);
@@ -39,6 +39,12 @@ public class CourseMapperTest {
         assertEquals(CourseLevel.BASIC, course.getLevel());
         assertEquals(12.5, course.getHoursLong(), 0.1);
         assertEquals(true, course.isActive());
-    }  
-  
+    }
+
+    @Test
+    public void testListAllCoursesWithTeachers() {
+        List<Course> courses = courseMapper.listWithTeachers();
+        assertEquals("only one course should exist", 1, courses.size());
+    }
+
 }
