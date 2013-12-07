@@ -43,7 +43,26 @@ public class CourseMapperTest {
 
     @Test
     public void testIntermediateLevelCourse() {
-        Course course = courseMapper.list().get(2);
+        Course course = courseMapper.findById(2);
         assertEquals(CourseLevel.INTERMEDIATE, course.getLevel());
     }
+
+    @Test
+    public void testAdvancedLevelCourse() {
+        Course course = courseMapper.findById(5);
+        assertEquals(CourseLevel.ADVANCED, course.getLevel());
+    }
+
+    @Test
+    public void testIntegersHoursLong() {
+        Course course = courseMapper.findById(9);
+        assertEquals(10.0, course.getHoursLong(), 0.1);
+    }
+    
+    @Test
+    public void testCourse13thHasTeacher4th() {
+        Course course = courseMapper.findById(13);
+        assertEquals("Teacher 4", course.getTeacher().getName());
+    }
+
 }
