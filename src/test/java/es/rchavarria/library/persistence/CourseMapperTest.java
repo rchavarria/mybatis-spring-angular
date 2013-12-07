@@ -26,7 +26,7 @@ public class CourseMapperTest {
     @Test
     public void testListAllCourses() {
         List<Course> courses = courseMapper.list();
-        assertEquals("only one course should exist", 1, courses.size());
+        assertEquals("test-data.sql inserts 15 courses", 15, courses.size());
     }
 
     @Test
@@ -41,4 +41,9 @@ public class CourseMapperTest {
         assertEquals(true, course.isActive());
     }
 
+    @Test
+    public void testIntermediateLevelCourse() {
+        Course course = courseMapper.list().get(2);
+        assertEquals(CourseLevel.INTERMEDIATE, course.getLevel());
+    }
 }
