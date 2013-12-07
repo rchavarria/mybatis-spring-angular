@@ -3,7 +3,7 @@ package es.rchavarria.library.controller.fixture;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.rchavarria.library.domain.Course;
+import es.rchavarria.library.domain.DetailedCourse;
 import es.rchavarria.library.domain.CourseLevel;
 import es.rchavarria.library.domain.Teacher;
 import es.rchavarria.library.event.AllCoursesEvent;
@@ -11,7 +11,7 @@ import es.rchavarria.library.event.AllCoursesEvent;
 public class RESTDataFixture {
 
     public static AllCoursesEvent allCourses() {
-        List<Course> courses = new ArrayList<Course>(3);
+        List<DetailedCourse> courses = new ArrayList<DetailedCourse>(3);
         
         courses.add(createCourse(1));
         courses.add(createCourse(3));
@@ -20,11 +20,11 @@ public class RESTDataFixture {
         return new AllCoursesEvent(courses);
     }
 
-    private static Course createCourse(long id) {
-        Course course = new Course();
+    private static DetailedCourse createCourse(long id) {
+        DetailedCourse course = new DetailedCourse();
         
         course.setIdCourse(id);
-        course.setTitle("Title 1");
+        course.setTitle("Title " + id);
         course.setTeacher(createTeacher(id));
         course.setLevel(CourseLevel.BASIC);
         course.setHoursLong(12.5f);

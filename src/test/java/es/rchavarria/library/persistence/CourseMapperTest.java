@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;  
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;  
 
-import es.rchavarria.library.domain.Course;
+import es.rchavarria.library.domain.DetailedCourse;
 import es.rchavarria.library.domain.CourseLevel;
   
 @SuppressWarnings("restriction")
@@ -25,13 +25,13 @@ public class CourseMapperTest {
 
     @Test
     public void testListAllCourses() {
-        List<Course> courses = courseMapper.list();
+        List<DetailedCourse> courses = courseMapper.list();
         assertEquals("test-data.sql inserts 15 courses", 15, courses.size());
     }
 
     @Test
     public void testFirstCourseData() {
-        Course course = courseMapper.findById(0);
+        DetailedCourse course = courseMapper.findById(0);
         
         assertEquals(0, course.getIdCourse());
         assertEquals("Title 1", course.getTitle());
@@ -43,25 +43,25 @@ public class CourseMapperTest {
 
     @Test
     public void testIntermediateLevelCourse() {
-        Course course = courseMapper.findById(2);
+        DetailedCourse course = courseMapper.findById(2);
         assertEquals(CourseLevel.INTERMEDIATE, course.getLevel());
     }
 
     @Test
     public void testAdvancedLevelCourse() {
-        Course course = courseMapper.findById(5);
+        DetailedCourse course = courseMapper.findById(5);
         assertEquals(CourseLevel.ADVANCED, course.getLevel());
     }
 
     @Test
     public void testIntegersHoursLong() {
-        Course course = courseMapper.findById(9);
+        DetailedCourse course = courseMapper.findById(9);
         assertEquals(10.0, course.getHoursLong(), 0.1);
     }
     
     @Test
     public void testCourse13thHasTeacher4th() {
-        Course course = courseMapper.findById(13);
+        DetailedCourse course = courseMapper.findById(13);
         assertEquals("Teacher 4", course.getTeacher().getName());
     }
 

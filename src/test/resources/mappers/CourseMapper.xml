@@ -3,7 +3,7 @@
 
 <mapper namespace="es.rchavarria.library.persistence.CourseMapper">
 
-    <resultMap id="courseWithTeacher" type="es.rchavarria.library.domain.Course">
+    <resultMap id="courseWithTeacher" type="es.rchavarria.library.domain.DetailedCourse">
         <id column="idCourse" property="idCourse" javaType="long"/>
         <result column="title" property="title" javaType="string"/>
         <result column="level" property="level" javaType="es.rchavarria.library.domain.CourseLevel"/>

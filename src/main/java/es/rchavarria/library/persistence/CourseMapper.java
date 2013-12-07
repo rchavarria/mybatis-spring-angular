@@ -2,11 +2,11 @@ package es.rchavarria.library.persistence;
 
 import java.util.List;
 
-import es.rchavarria.library.domain.Course;
+import es.rchavarria.library.domain.DetailedCourse;
 
 public interface CourseMapper {
 
-    public List<Course> list();
+    public List<DetailedCourse> list();
     
-    public Course findById(long idCourse);
+    public DetailedCourse findById(long idCourse);
 }

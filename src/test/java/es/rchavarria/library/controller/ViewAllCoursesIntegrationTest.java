@@ -3,7 +3,8 @@ package es.rchavarria.library.controller;
 import static es.rchavarria.library.controller.fixture.RESTDataFixture.allCourses;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 import org.junit.Before;
@@ -35,39 +36,27 @@ public class ViewAllCoursesIntegrationTest {
             .setMessageConverters(new MappingJackson2HttpMessageConverter()).build();
   }
 
-//  @Test
-//  public void thatViewOrderUsesHttpNotFound() throws Exception {
-//
-//    when(courseService.requestOrderDetails(any(RequestOrderDetailsEvent.class))).thenReturn(
-//            orderDetailsNotFound(key));
-//
-//    this.mockMvc.perform(
-//            get("/aggregators/orders/{id}",  key.toString())
-//                    .accept(MediaType.APPLICATION_JSON))
-//            .andDo(print())
-//            .andExpect(status().isNotFound());
-//  }
-
   @Test
-  public void thatViewOrderUsesHttpOK() throws Exception {
+  public void testViewAllCoursesUsesHttpOK() throws Exception {
     when(courseService.requestAllCourses()).thenReturn(allCourses());
 
-    this.mockMvc.perform(
-            get("/library/courses")
-            .accept(MediaType.APPLICATION_JSON))
-            .andExpect(status().isOk());
+    this.mockMvc.perform(get("/library/courses")
+        .accept(MediaType.APPLICATION_JSON))
+        .andDo(print())
+        .andExpect(status().isOk());
   }
 
-//  @Test
-//  public void thatViewOrderRendersCorrectly() throws Exception {
-//
-//    when(courseService.requestOrderDetails(any(RequestOrderDetailsEvent.class))).thenReturn(
-//            orderDetailsEvent(key));
-//
-//    this.mockMvc.perform(
-//            get("/aggregators/orders/{id}", key.toString())
-//                    .accept(MediaType.APPLICATION_JSON))
-//            .andExpect(jsonPath("$.items['" + YUMMY_ITEM + "']").value(12))
-//            .andExpect(jsonPath("$.key").value(key.toString()));
-//  }
+  @Test
+  public void testViewAllCoursesRendersOk() throws Exception {
+      when(courseService.requestAllCourses()).thenReturn(allCourses());
+
+    this.mockMvc.perform(get("/library/courses")
+        .accept(MediaType.APPLICATION_JSON))
+        .andDo(print())
+        .andExpect(jsonPath("$[0].title").value("Title 1"))
+        .andExpect(jsonPath("$[0].level").value("BASIC"))
+        .andExpect(jsonPath("$[0].hoursLong").value(12.5))
+        .andExpect(jsonPath("$[1].title").value("Title 3"))
+        .andExpect(jsonPath("$[2].title").value("Title 5"));
+  }
 }

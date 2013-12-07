@@ -2,18 +2,18 @@ package es.rchavarria.library.event;
 
 import java.util.List;
 
-import es.rchavarria.library.domain.Course;
+import es.rchavarria.library.domain.DetailedCourse;
 
 public class AllCoursesEvent {
 
-    private final List<Course> courses;
+    private final List<DetailedCourse> courses;
 
-    public AllCoursesEvent(List<Course> courses) {
+    public AllCoursesEvent(List<DetailedCourse> courses) {
         super();
         this.courses = courses;
     }
 
-    public List<Course> getCourses() {
+    public List<DetailedCourse> getCourses() {
         return courses;
     }
 

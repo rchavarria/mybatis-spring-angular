@@ -1,6 +1,6 @@
 package es.rchavarria.library.domain;
 
-public class Course {
+public class DetailedCourse {
 
     private long idCourse;
     private String title;
