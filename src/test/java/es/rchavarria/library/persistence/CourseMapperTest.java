@@ -31,7 +31,7 @@ public class CourseMapperTest {
 
     @Test
     public void testFirstCourseData() {
-        Course course = courseMapper.listWithTeachers().get(0);
+        Course course = courseMapper.list().get(0);
         
         assertEquals(0, course.getIdCourse());
         assertEquals("Title 1", course.getTitle());
@@ -39,12 +39,6 @@ public class CourseMapperTest {
         assertEquals(CourseLevel.BASIC, course.getLevel());
         assertEquals(12.5, course.getHoursLong(), 0.1);
         assertEquals(true, course.isActive());
-    }
-
-    @Test
-    public void testListAllCoursesWithTeachers() {
-        List<Course> courses = courseMapper.listWithTeachers();
-        assertEquals("only one course should exist", 1, courses.size());
     }
 
 }
