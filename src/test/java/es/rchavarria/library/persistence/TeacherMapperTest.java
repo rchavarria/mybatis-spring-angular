@@ -11,11 +11,12 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import es.rchavarria.library.config.CoreConfig;
 import es.rchavarria.library.domain.Teacher;
   
 @SuppressWarnings("restriction")
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:/test-mybatis-app-config.xml" })  
+@ContextConfiguration(classes = { CoreConfig.class })  
 public class TeacherMapperTest {  
   
     @Resource  
