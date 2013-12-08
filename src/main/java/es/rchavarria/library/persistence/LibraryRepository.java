@@ -6,6 +6,6 @@ import es.rchavarria.library.domain.DetailedCourse;
 
 public interface LibraryRepository {
 
-    public List<DetailedCourse> list();
+    public List<DetailedCourse> listDetailedCourses();
 
 }

@@ -8,7 +8,7 @@ import es.rchavarria.library.domain.DetailedCourse;
 
 public class LibraryStaticRepository implements LibraryRepository {
 
-    public List<DetailedCourse> list() {
+    public List<DetailedCourse> listDetailedCourses() {
         List<DetailedCourse> courses = new ArrayList<DetailedCourse>(1);
         
         courses.add(createDetailedCourse());

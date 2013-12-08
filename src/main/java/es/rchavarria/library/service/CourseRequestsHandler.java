@@ -15,7 +15,7 @@ public class CourseRequestsHandler implements CourseService {
     }
     
     public AllCoursesEvent requestAllCourses() {
-        List<DetailedCourse> courses = repository.list();
+        List<DetailedCourse> courses = repository.listDetailedCourses();
         return new AllCoursesEvent(courses);
     }
 
