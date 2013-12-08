@@ -16,11 +16,11 @@ import es.rchavarria.library.service.CourseService;
 public class CoreConfigIntegrationTest {
 
     @Autowired
-    CourseService orderService;
+    CourseService courseService;
 
     @Test
     public void testRequestAllCourses() {
-        AllCoursesEvent event = orderService.requestAllCourses();
-        assertEquals(1, event.getCourses().size());
+        AllCoursesEvent event = courseService.requestAllCourses();
+        assertEquals(15, event.getCourses().size());
     }
 }

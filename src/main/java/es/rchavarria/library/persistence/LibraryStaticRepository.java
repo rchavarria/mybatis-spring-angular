@@ -1,10 +1,12 @@
 package es.rchavarria.library.persistence;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import es.rchavarria.library.domain.CourseLevel;
 import es.rchavarria.library.domain.DetailedCourse;
+import es.rchavarria.library.domain.Teacher;
 
 public class LibraryStaticRepository implements LibraryRepository {
 
@@ -24,6 +26,10 @@ public class LibraryStaticRepository implements LibraryRepository {
         course.setLevel(CourseLevel.BASIC);
         
         return course;
+    }
+
+    public List<Teacher> listTeachers() {
+        return Collections.emptyList();
     }
 
 }

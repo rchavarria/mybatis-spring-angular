@@ -33,11 +33,13 @@ public class MVCConfigIntegrationTest {
   }
 
   @Test
-  public void addANewOrderToTheSystem() throws Exception  {
+  public void testRequestAllCourses() throws Exception  {
     this.mockMvc.perform(get("/library/courses")
             .accept(MediaType.APPLICATION_JSON))
             .andDo(print())
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$[0].title").value("Title 1"));
+            .andExpect(jsonPath("$[0].title").value("Title 1"))
+            .andExpect(jsonPath("$[6].title").value("Title 4 - Teacher 1"))
+            .andExpect(jsonPath("$[14].title").value("Title 5 - Teacher 5"));
   }
 }

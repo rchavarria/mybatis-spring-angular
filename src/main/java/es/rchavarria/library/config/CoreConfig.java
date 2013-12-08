@@ -15,8 +15,8 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import es.rchavarria.library.persistence.CourseMapper;
+import es.rchavarria.library.persistence.LibraryHSQLRepository;
 import es.rchavarria.library.persistence.LibraryRepository;
-import es.rchavarria.library.persistence.LibraryStaticRepository;
 import es.rchavarria.library.persistence.TeacherMapper;
 import es.rchavarria.library.service.CourseRequestsHandler;
 import es.rchavarria.library.service.CourseService;
@@ -32,8 +32,8 @@ public class CoreConfig {
     }
     
     @Bean
-    public LibraryRepository createLibraryRepository() {
-        return new LibraryStaticRepository();
+    public LibraryRepository createLibraryRepository(CourseMapper cm, TeacherMapper tm) {
+        return new LibraryHSQLRepository(cm, tm);
     }
     
     @Bean
