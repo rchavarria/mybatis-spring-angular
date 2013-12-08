@@ -11,8 +11,8 @@
 
     <!--  use an embedded database as data source -->
     <jdbc:embedded-database id="dataSource" type="HSQL">
-        <jdbc:script location="classpath:sql/schema.sql"/>
-        <jdbc:script location="classpath:sql/test-data.sql"/>
+        <jdbc:script location="classpath:/sql/schema.sql"/>
+        <jdbc:script location="classpath:/sql/initial-data.sql"/>
     </jdbc:embedded-database>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

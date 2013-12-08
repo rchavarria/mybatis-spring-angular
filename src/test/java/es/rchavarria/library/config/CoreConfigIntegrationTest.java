@@ -19,7 +19,7 @@ public class CoreConfigIntegrationTest {
     CourseService orderService;
 
     @Test
-    public void addANewOrderToTheSystem() {
+    public void testRequestAllCourses() {
         AllCoursesEvent event = orderService.requestAllCourses();
         assertEquals(1, event.getCourses().size());
     }

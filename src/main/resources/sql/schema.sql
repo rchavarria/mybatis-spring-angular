@@ -1,3 +1,9 @@
+-- clean up
+DROP SEQUENCE coursesSeq IF EXISTS;
+DROP TABLE courses IF EXISTS;
+DROP SEQUENCE teachersSeq IF EXISTS;
+DROP TABLE teachers IF EXISTS;
+
 -- sequences
 CREATE SEQUENCE teachersSeq;
 CREATE SEQUENCE coursesSeq;
