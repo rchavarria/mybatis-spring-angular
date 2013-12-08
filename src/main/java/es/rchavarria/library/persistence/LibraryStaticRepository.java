@@ -6,7 +6,7 @@ import java.util.List;
 import es.rchavarria.library.domain.CourseLevel;
 import es.rchavarria.library.domain.DetailedCourse;
 
-public class CourseStaticRepository implements CourseRepository {
+public class LibraryStaticRepository implements LibraryRepository {
 
     public List<DetailedCourse> list() {
         List<DetailedCourse> courses = new ArrayList<DetailedCourse>(1);

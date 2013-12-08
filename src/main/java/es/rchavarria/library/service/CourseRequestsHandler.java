@@ -4,13 +4,13 @@ import java.util.List;
 
 import es.rchavarria.library.domain.DetailedCourse;
 import es.rchavarria.library.event.AllCoursesEvent;
-import es.rchavarria.library.persistence.CourseRepository;
+import es.rchavarria.library.persistence.LibraryRepository;
 
 public class CourseRequestsHandler implements CourseService {
 
-    private final CourseRepository repository;
+    private final LibraryRepository repository;
     
-    public CourseRequestsHandler(CourseRepository repository) {
+    public CourseRequestsHandler(LibraryRepository repository) {
         this.repository = repository;
     }
     

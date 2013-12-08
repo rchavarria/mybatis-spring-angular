@@ -4,7 +4,7 @@ import java.util.List;
 
 import es.rchavarria.library.domain.DetailedCourse;
 
-public interface CourseRepository {
+public interface LibraryRepository {
 
     public List<DetailedCourse> list();
 

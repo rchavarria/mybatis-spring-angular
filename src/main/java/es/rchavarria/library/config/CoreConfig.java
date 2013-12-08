@@ -15,8 +15,8 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import es.rchavarria.library.persistence.CourseMapper;
-import es.rchavarria.library.persistence.CourseRepository;
-import es.rchavarria.library.persistence.CourseStaticRepository;
+import es.rchavarria.library.persistence.LibraryRepository;
+import es.rchavarria.library.persistence.LibraryStaticRepository;
 import es.rchavarria.library.persistence.TeacherMapper;
 import es.rchavarria.library.service.CourseRequestsHandler;
 import es.rchavarria.library.service.CourseService;
@@ -27,13 +27,13 @@ public class CoreConfig {
     private static Logger LOGGER = LoggerFactory.getLogger(CoreConfig.class);
 
     @Bean
-    public CourseService createCourseService(CourseRepository repository) {
+    public CourseService createCourseService(LibraryRepository repository) {
         return new CourseRequestsHandler(repository);
     }
     
     @Bean
-    public CourseRepository createCourseRepository() {
-        return new CourseStaticRepository();
+    public LibraryRepository createLibraryRepository() {
+        return new LibraryStaticRepository();
     }
     
     @Bean
