@@ -29,7 +29,7 @@ public class CourseQueriesController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public List<Course> getAllOrders() {
+    public List<Course> getAllCourses() {
         LOGGER.info("all courses will be returned");
         List<Course> courses = new LinkedList<Course>();
         
