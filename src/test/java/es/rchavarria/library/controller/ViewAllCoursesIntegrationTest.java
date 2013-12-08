@@ -40,7 +40,7 @@ public class ViewAllCoursesIntegrationTest {
   public void testViewAllCoursesUsesHttpOK() throws Exception {
     when(courseService.requestAllCourses()).thenReturn(allCourses());
 
-    this.mockMvc.perform(get("/library/courses")
+    this.mockMvc.perform(get("/courses")
         .accept(MediaType.APPLICATION_JSON))
         .andDo(print())
         .andExpect(status().isOk());
@@ -50,7 +50,7 @@ public class ViewAllCoursesIntegrationTest {
   public void testViewAllCoursesRendersOk() throws Exception {
       when(courseService.requestAllCourses()).thenReturn(allCourses());
 
-    this.mockMvc.perform(get("/library/courses")
+    this.mockMvc.perform(get("/courses")
         .accept(MediaType.APPLICATION_JSON))
         .andDo(print())
         .andExpect(jsonPath("$[0].title").value("Title 1"))

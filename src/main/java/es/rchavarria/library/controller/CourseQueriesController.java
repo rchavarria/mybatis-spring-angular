@@ -18,7 +18,7 @@ import es.rchavarria.library.rest.domain.Course;
 import es.rchavarria.library.service.CourseService;
 
 @Controller
-@RequestMapping("/library/courses")
+@RequestMapping("/courses")
 public class CourseQueriesController {
 
     private static Logger LOGGER = LoggerFactory.getLogger(CourseQueriesController.class);

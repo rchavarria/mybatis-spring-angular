@@ -34,7 +34,7 @@ public class MVCConfigIntegrationTest {
 
   @Test
   public void testRequestAllCourses() throws Exception  {
-    this.mockMvc.perform(get("/library/courses")
+    this.mockMvc.perform(get("/courses")
             .accept(MediaType.APPLICATION_JSON))
             .andDo(print())
             .andExpect(status().isOk())
