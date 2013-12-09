@@ -1,5 +1,6 @@
-
+/*global describe, beforeEach, it, expect */
 describe("Courses catalog controller", function () {
+    "use strict";
     
     beforeEach(module("librarian"));
     
