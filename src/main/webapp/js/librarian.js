@@ -1,6 +1,6 @@
 
 var librarian = angular.module("librarian", []);
 
-librarian.controller("CoursesCatalogCtrl", ["$scope", function ($scope) {
+librarian.controller("CoursesCatalogCtrl", function ($scope) {
     $scope.name = "world";
-}]);
+});
