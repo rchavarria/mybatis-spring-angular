@@ -2,7 +2,8 @@
     "use strict";
 
     var librarian = angular.module("librarian", [
-        "ngRoute"
+        "ngRoute",
+        "ngResource"
     ]);
 
     // config routes and different views for each route
@@ -21,8 +22,9 @@
             });
     }]);
 
-    librarian.controller("CoursesCatalogCtrl", ["$scope", function ($scope) {
-        $scope.name = "world";
+    librarian.controller("CoursesCatalogCtrl", ["$scope", "CourseServiceResource", 
+        function ($scope, CourseServiceResource) {
+        $scope.courses = CourseServiceResource.query();
     }]);
 
     librarian.controller("CreateCourseCtrl", ["$scope", function ($scope) {
