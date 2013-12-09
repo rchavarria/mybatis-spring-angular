@@ -16,6 +16,7 @@ module.exports = function(config) {
     files: [
         'src/main/webapp/js/lib/angular-1.2.4.js',
         'src/main/webapp/js/lib/angular-*.js',
+        'src/test/webapp/js/lib/angular-*.js',
         'src/main/webapp/js/*.js',
         'src/test/webapp/js/**/*Spec.js'
     ],
@@ -66,7 +67,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false,
+    singleRun: true,
 
   });
 };
