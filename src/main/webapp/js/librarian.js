@@ -62,7 +62,16 @@
         $scope.coursesTable = new ngTableParams(tableParams, tableSettings);
     }]);
 
-    librarian.controller("CreateCourseCtrl", ["$scope", function ($scope) {
-        $scope.idCourse = 123454321;
+    librarian.controller("CreateCourseCtrl", ["$scope", "TeacherServiceResource", "LevelServiceResource", 
+        function ($scope, TeacherServiceResource, LevelServiceResource) {
+
+        $scope.teachers = [
+           { idTeacher: 0, name: "TeAcHeR 1" },
+           { idTeacher: 1, name: "TeAcHeR 2" },
+           { idTeacher: 2, name: "TeAcHeR 3" },
+           ];
+        $scope.levels = ["bAsIc", "InTeRmeDiAtE", "AdVaNcEd"];
+//        $scope.teachers = TeacherServiceResource.query();
+//        $scope.levels = LevelServiceResource.query();
     }]);
 }());

@@ -10,4 +10,12 @@
     librarian.factory("CourseServiceResource", ["$resource", function ($resource) {
         return $resource('courses');
     }]);
+
+    librarian.factory("TeacherServiceResource", ["$resource", function ($resource) {
+        return $resource('teachers');
+    }]);
+
+    librarian.factory("LevelServiceResource", ["$resource", function ($resource) {
+        return $resource('levels');
+    }]);
 }());

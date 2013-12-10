@@ -1,17 +1,19 @@
-<h1>Courses catalog</h1>
+<h1 class="col-sm-offset-1">Courses catalog</h1>
 
-<table ng-table="coursesTable" class="table">
-    <tr ng-repeat="course in $data">
-        <td data-title="'Title'" sortable="'title'">
-            {{course.title}}
-        </td>
-        <td data-title="'Level'">
-            {{course.level}}
-        </td>
-        <td data-title="'Hours long'">
-            {{course.hoursLong}}
-        </td>
-    </tr>
-</table>
-
-<a href="#/creatingCourse" class="btn btn-primary">Create a course</a>
+<div class="col-sm-offset-1 col-sm-8">
+	<table ng-table="coursesTable" class="table">
+	    <tr ng-repeat="course in $data">
+	        <td data-title="'Title'" sortable="'title'">
+	            {{course.title}}
+	        </td>
+	        <td data-title="'Level'">
+	            {{course.level}}
+	        </td>
+	        <td data-title="'Hours long'">
+	            {{course.hoursLong}}
+	        </td>
+	    </tr>
+	</table>
+	
+	<a href="#/creatingCourse" class="btn btn-primary">Create a course</a>
+</div>
