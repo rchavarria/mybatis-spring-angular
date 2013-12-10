@@ -1,4 +1,15 @@
 <h1>Courses catalog</h1>
-<ul>
-    <li ng-repeat="course in courses">{{course.title}}</li>
-</ul>
+
+<table ng-table="coursesTable" class="table">
+    <tr ng-repeat="course in $data">
+        <td data-title="'Title'" sortable="'title'">
+            {{course.title}}
+        </td>
+        <td data-title="'Level'">
+            {{course.level}}
+        </td>
+        <td data-title="'Hours long'">
+            {{course.hoursLong}}
+        </td>
+    </tr>
+</table>

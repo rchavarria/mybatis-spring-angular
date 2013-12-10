@@ -3,7 +3,8 @@
 
     var librarian = angular.module("librarian", [
         "ngRoute",
-        "ngResource"
+        "ngResource",
+        "ngTable"
     ]);
 
     // config routes and different views for each route
@@ -22,9 +23,31 @@
             });
     }]);
 
-    librarian.controller("CoursesCatalogCtrl", ["$scope", "CourseServiceResource", 
-        function ($scope, CourseServiceResource) {
-        $scope.courses = CourseServiceResource.query();
+    librarian.controller("CoursesCatalogCtrl", ["$scope", "$filter", "ngTableParams", "CourseServiceResource", 
+        function ($scope, $filter, ngTableParams, CourseServiceResource) {
+        
+        $scope.coursesTable = new ngTableParams({
+            page: 1,            // show first page
+            count: 10,          // count per page
+            sorting: {
+                name: 'asc'     // initial sorting
+            }
+        }, {
+            total: 0, // length of data
+            getData: function($defer, params) {
+                CourseServiceResource.query(function (data) {
+                    console.log("querying course service resource, total = " + data.length);
+                    
+                    params.total(data.length);
+                    var orderedData = params.sorting() ?
+                            $filter('orderBy')(data, params.orderBy()) :
+                            $scope.courses;
+                  
+                  $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+                });
+                // use build-in angular filter
+            }
+        });
     }]);
 
     librarian.controller("CreateCourseCtrl", ["$scope", function ($scope) {
