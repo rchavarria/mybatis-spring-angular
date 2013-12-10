@@ -17,6 +17,7 @@ module.exports = function(config) {
         'src/main/webapp/js/lib/angular-1.2.4.js',
         'src/main/webapp/js/lib/angular-*.js',
         'src/test/webapp/js/lib/angular-*.js',
+        'src/main/webapp/js/lib/ng-table-*.js',
         'src/main/webapp/js/*.js',
         'src/test/webapp/js/**/*Spec.js'
     ],

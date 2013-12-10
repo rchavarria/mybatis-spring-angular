@@ -25,29 +25,41 @@
 
     librarian.controller("CoursesCatalogCtrl", ["$scope", "$filter", "ngTableParams", "CourseServiceResource", 
         function ($scope, $filter, ngTableParams, CourseServiceResource) {
-        
-        $scope.coursesTable = new ngTableParams({
-            page: 1,            // show first page
-            count: 10,          // count per page
-            sorting: {
-                name: 'asc'     // initial sorting
-            }
-        }, {
-            total: 0, // length of data
-            getData: function($defer, params) {
-                CourseServiceResource.query(function (data) {
-                    console.log("querying course service resource, total = " + data.length);
-                    
-                    params.total(data.length);
-                    var orderedData = params.sorting() ?
-                            $filter('orderBy')(data, params.orderBy()) :
-                            $scope.courses;
-                  
-                  $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-                });
-                // use build-in angular filter
-            }
-        });
+
+        var tableParams = {
+                page: 1,
+                count: 5,
+                sorting: { title: 'asc' }
+            },
+            tableSettings = {
+                total: 0,
+                counts: [5, 10, 25, 50],
+                getData: function($defer, params) {
+                    console.log("getting data");
+                    CourseServiceResource.query(function (data) {
+                        console.log("querying data");
+                        // update length of data
+                        params.total(data.length);
+
+                        console.log("some calculations");
+                        var currentPage = params.page(),
+                            count = params.count(),
+                            orderedData = params.sorting() ?
+                                $filter('orderBy')(data, params.orderBy()) :
+                                data,
+                            paginatedData = orderedData.slice((currentPage - 1) * count, currentPage * count);
+
+                        console.log("current page: " + currentPage);
+                        console.log("count: " + count);
+                        console.log("ordered data: " + orderedData);
+                        console.log("paginated data: " + paginatedData);
+
+                        $defer.resolve(paginatedData);
+                    });
+                }
+            };
+
+        $scope.coursesTable = new ngTableParams(tableParams, tableSettings);
     }]);
 
     librarian.controller("CreateCourseCtrl", ["$scope", function ($scope) {
