@@ -1,6 +1,6 @@
 package es.rchavarria.library.controller;
 
-import static es.rchavarria.library.controller.fixture.RESTDataFixture.allCourses;
+import static es.rchavarria.library.controller.fixture.RESTDataFixture.allTeachers;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -16,47 +16,44 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.test.web.servlet.MockMvc;
 
-import es.rchavarria.library.service.CourseService;
+import es.rchavarria.library.service.TeacherService;
 
-public class ViewAllCoursesIntegrationTest {
+public class ViewAllTeachersIntegrationTest {
   
     MockMvc mockMvc;
 
     @InjectMocks
-    CourseQueriesController controller;
+    TeacherQueriesController controller;
 
     @Mock
-    CourseService courseService;
+    TeacherService teacherService;
 
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
 
         this.mockMvc = standaloneSetup(controller)
-                .setMessageConverters(new MappingJackson2HttpMessageConverter()).build();
+            .setMessageConverters(new MappingJackson2HttpMessageConverter()).build();
     }
 
     @Test
-    public void testRequestAllCoursesUsesHttpOK() throws Exception {
-        when(courseService.requestAllCourses()).thenReturn(allCourses());
+    public void testRequestAllTeachersUsesHttpOK() throws Exception {
+        when(teacherService.requestAllTeachers()).thenReturn(allTeachers());
 
-        this.mockMvc.perform(get("/courses")
+        this.mockMvc.perform(get("/teachers")
             .accept(MediaType.APPLICATION_JSON))
             .andDo(print())
             .andExpect(status().isOk());
     }
 
     @Test
-    public void testRequestAllCoursesRendersOkAsJSON() throws Exception {
-        when(courseService.requestAllCourses()).thenReturn(allCourses());
+    public void testRequestAllTeachersRendersOkAsJSON() throws Exception {
+        when(teacherService.requestAllTeachers()).thenReturn(allTeachers());
 
-        this.mockMvc.perform(get("/courses")
+        this.mockMvc.perform(get("/teachers")
             .accept(MediaType.APPLICATION_JSON))
             .andDo(print())
-            .andExpect(jsonPath("$[0].title").value("Title 1"))
-            .andExpect(jsonPath("$[0].level").value("BASIC"))
-            .andExpect(jsonPath("$[0].hoursLong").value(12.5))
-            .andExpect(jsonPath("$[1].title").value("Title 3"))
-            .andExpect(jsonPath("$[2].title").value("Title 5"));
+            .andExpect(jsonPath("$[0].idTeacher").value(0))
+            .andExpect(jsonPath("$[0].name").value("Teacher 0"));
     }
 }
