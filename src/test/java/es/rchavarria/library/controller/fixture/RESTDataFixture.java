@@ -1,15 +1,16 @@
 package es.rchavarria.library.controller.fixture;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
 
-import es.rchavarria.library.domain.DetailedCourse;
 import es.rchavarria.library.domain.CourseLevel;
+import es.rchavarria.library.domain.DetailedCourse;
 import es.rchavarria.library.domain.Teacher;
+import es.rchavarria.library.event.AllCourseLevelsEvent;
 import es.rchavarria.library.event.AllCoursesEvent;
 import es.rchavarria.library.event.AllTeachersEvent;
-import es.rchavarria.library.event.AllCourseLevelsEvent;
+import es.rchavarria.library.event.DetailedCourseCreatedEvent;
 
 public class RESTDataFixture {
 
@@ -57,5 +58,13 @@ public class RESTDataFixture {
 
     public static AllCourseLevelsEvent allLevels() {
         return new AllCourseLevelsEvent(Arrays.asList(CourseLevel.values()));
+    }
+    
+    public static DetailedCourseCreatedEvent courseCreated(long id) {
+        return new DetailedCourseCreatedEvent(createCourse(id));
+    }
+
+    public static String standardCourseJSON(long id) {
+        return "{ \"idCourse\": " + id + " }";
     }
 }

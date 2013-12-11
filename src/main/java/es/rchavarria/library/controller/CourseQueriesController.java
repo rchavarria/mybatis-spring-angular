@@ -40,17 +40,4 @@ public class CourseQueriesController {
         return courses;
     }
 
-//    @RequestMapping(method = RequestMethod.GET, value = "/{id}")
-//    public ResponseEntity<Order> viewOrder(@PathVariable String id) {
-//
-//        OrderDetailsEvent details = courseService.requestOrderDetails(new RequestOrderDetailsEvent(UUID.fromString(id)));
-//
-//        if (!details.isEntityFound()) {
-//            return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
-//        }
-//
-//        Order order = Order.fromOrderDetails(details.getOrderDetails());
-//
-//        return new ResponseEntity<Order>(order, HttpStatus.OK);
-//    }
 }
