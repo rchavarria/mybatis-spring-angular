@@ -10,10 +10,10 @@ import org.mockito.InjectMocks;
 
 import es.rchavarria.library.persistence.LibraryRepository;
 
-public class TeacherRequestHandlerTest {
+public class TeacherRequestsHandlerTest {
 
     @InjectMocks
-    private TeacherRequestHandler handler;
+    private TeacherRequestsHandler handler;
     @Mock
     private LibraryRepository repository;
     

@@ -19,8 +19,9 @@ import es.rchavarria.library.persistence.LibraryHSQLRepository;
 import es.rchavarria.library.persistence.LibraryRepository;
 import es.rchavarria.library.persistence.TeacherMapper;
 import es.rchavarria.library.service.CourseRequestsHandler;
-import es.rchavarria.library.service.TeacherRequestsHandler;
 import es.rchavarria.library.service.CourseService;
+import es.rchavarria.library.service.LevelService;
+import es.rchavarria.library.service.TeacherRequestsHandler;
 import es.rchavarria.library.service.TeacherService;
 
 @Configuration
@@ -36,6 +37,11 @@ public class CoreConfig {
     @Bean
     public TeacherService createTeacherService(LibraryRepository repository) {
         return new TeacherRequestsHandler(repository);
+    }
+
+    @Bean
+    public LevelService createLevelService() {
+        return null;
     }
     
     @Bean

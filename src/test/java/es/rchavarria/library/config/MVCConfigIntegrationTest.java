@@ -19,7 +19,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(classes = {CoreConfig.class, MVCConfig.class})
+@ContextConfiguration(classes = { CoreConfig.class, MVCConfig.class })
 public class MVCConfigIntegrationTest {
 
   @Autowired
