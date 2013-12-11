@@ -31,7 +31,7 @@ module.exports = function(config) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-//    reporters: ['progress'],
+    reporters: ['dots', 'junit'],
 
 
     // web server port
@@ -69,6 +69,11 @@ module.exports = function(config) {
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
     singleRun: true,
+    
+
+    junitReporter: {
+        outputFile: 'karma-test-results.xml'
+    }
 
   });
 };
