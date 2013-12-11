@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import es.rchavarria.library.domain.CourseLevel;
 import es.rchavarria.library.rest.domain.Level;
-import es.rchavarria.library.rest.domain.SimpleTeacher;
 import es.rchavarria.library.service.LevelService;
 
 @Controller

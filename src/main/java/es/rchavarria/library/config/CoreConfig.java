@@ -20,6 +20,7 @@ import es.rchavarria.library.persistence.LibraryRepository;
 import es.rchavarria.library.persistence.TeacherMapper;
 import es.rchavarria.library.service.CourseRequestsHandler;
 import es.rchavarria.library.service.CourseService;
+import es.rchavarria.library.service.LevelRequestHandler;
 import es.rchavarria.library.service.LevelService;
 import es.rchavarria.library.service.TeacherRequestsHandler;
 import es.rchavarria.library.service.TeacherService;
@@ -41,7 +42,7 @@ public class CoreConfig {
 
     @Bean
     public LevelService createLevelService() {
-        return null;
+        return new LevelRequestHandler();
     }
     
     @Bean
