@@ -20,6 +20,7 @@ import es.rchavarria.library.persistence.LibraryRepository;
 import es.rchavarria.library.persistence.TeacherMapper;
 import es.rchavarria.library.service.CourseRequestsHandler;
 import es.rchavarria.library.service.CourseService;
+import es.rchavarria.library.service.TeacherService;
 
 @Configuration
 public class CoreConfig {
@@ -29,6 +30,11 @@ public class CoreConfig {
     @Bean
     public CourseService createCourseService(LibraryRepository repository) {
         return new CourseRequestsHandler(repository);
+    }
+
+    @Bean
+    public TeacherService createTeacherService(LibraryRepository repository) {
+        return null;
     }
     
     @Bean

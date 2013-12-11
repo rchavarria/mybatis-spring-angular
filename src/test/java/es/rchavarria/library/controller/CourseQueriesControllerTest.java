@@ -15,24 +15,24 @@ import es.rchavarria.library.service.CourseService;
 
 public class CourseQueriesControllerTest {
 
-  @InjectMocks
-  CourseQueriesController controller;
+    @InjectMocks
+    CourseQueriesController controller;
 
-  @Mock
-  CourseService courseService;
+    @Mock
+    CourseService courseService;
 
-  @Before
-  public void setup() {
-    MockitoAnnotations.initMocks(this);
-  }
+    @Before
+    public void setup() {
+        MockitoAnnotations.initMocks(this);
+    }
 
-  @Test
-  public void testGetAllCoursesUsesCourseService() throws Exception {
-    when(courseService.requestAllCourses()).thenReturn(allCourses());
-    
-    controller.getAllCourses();
-    
-    verify(courseService, times(1)).requestAllCourses();
-  }
+    @Test
+    public void testGetAllCoursesUsesCourseService() throws Exception {
+        when(courseService.requestAllCourses()).thenReturn(allCourses());
+
+        controller.getAllCourses();
+
+        verify(courseService, times(1)).requestAllCourses();
+    }
 
 }

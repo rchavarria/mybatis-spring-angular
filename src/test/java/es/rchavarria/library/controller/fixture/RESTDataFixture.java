@@ -7,6 +7,7 @@ import es.rchavarria.library.domain.DetailedCourse;
 import es.rchavarria.library.domain.CourseLevel;
 import es.rchavarria.library.domain.Teacher;
 import es.rchavarria.library.event.AllCoursesEvent;
+import es.rchavarria.library.event.AllTeachersEvent;
 
 public class RESTDataFixture {
 
@@ -33,6 +34,16 @@ public class RESTDataFixture {
         return course;
     }
 
+    public static AllTeachersEvent allTeachers() {
+        List<Teacher> teachers = new ArrayList<Teacher>(3);
+        
+        teachers.add(createTeacher(0));
+        teachers.add(createTeacher(1));
+        teachers.add(createTeacher(2));
+        
+        return new AllTeachersEvent(teachers);
+    }
+    
     private static Teacher createTeacher(long id) {
         Teacher teacher = new Teacher();
         
