@@ -6,9 +6,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.InjectMocks;
 
 public class LibraryHSQLRepositoryTest {
 
+    @InjectMocks
     private LibraryHSQLRepository repository;
     @Mock
     private CourseMapper courseMapper;
@@ -18,8 +20,6 @@ public class LibraryHSQLRepositoryTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        
-        repository = new LibraryHSQLRepository(courseMapper, teacherMapper);
     }
     
     @Test
