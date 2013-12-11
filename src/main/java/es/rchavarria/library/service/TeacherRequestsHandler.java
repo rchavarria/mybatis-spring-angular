@@ -7,12 +7,12 @@ import es.rchavarria.library.domain.Teacher;
 import es.rchavarria.library.event.AllTeachersEvent;
 import es.rchavarria.library.persistence.LibraryRepository;
 
-public class TeacherRequestHandler implements TeacherService {
+public class TeacherRequestsHandler implements TeacherService {
 
     @Autowired
     private final LibraryRepository repository;
     
-    public TeacherRequestHandler(LibraryRepository repository) {
+    public TeacherRequestsHandler(LibraryRepository repository) {
         this.repository = repository;
     }
     

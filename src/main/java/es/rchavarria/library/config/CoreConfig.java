@@ -19,6 +19,7 @@ import es.rchavarria.library.persistence.LibraryHSQLRepository;
 import es.rchavarria.library.persistence.LibraryRepository;
 import es.rchavarria.library.persistence.TeacherMapper;
 import es.rchavarria.library.service.CourseRequestsHandler;
+import es.rchavarria.library.service.TeacherRequestsHandler;
 import es.rchavarria.library.service.CourseService;
 import es.rchavarria.library.service.TeacherService;
 
@@ -34,7 +35,7 @@ public class CoreConfig {
 
     @Bean
     public TeacherService createTeacherService(LibraryRepository repository) {
-        return null;
+        return new TeacherRequestsHandler(repository);
     }
     
     @Bean

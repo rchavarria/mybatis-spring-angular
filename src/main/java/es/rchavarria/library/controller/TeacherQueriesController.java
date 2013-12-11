@@ -24,7 +24,7 @@ public class TeacherQueriesController {
     private static Logger LOGGER = LoggerFactory.getLogger(TeacherQueriesController.class);
 
     @Autowired
-    private TeacherService courseService;
+    private TeacherService teacherService;
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
@@ -33,7 +33,7 @@ public class TeacherQueriesController {
         LOGGER.info("all teachers will be returned");
         List<SimpleTeacher> teachers = new LinkedList<SimpleTeacher>();
         
-        for(Teacher teacher : courseService.requestAllTeachers().getTeachers()) {
+        for(Teacher teacher : teacherService.requestAllTeachers().getTeachers()) {
             teachers.add(SimpleTeacher.fromTeacher(teacher));
         }
         
