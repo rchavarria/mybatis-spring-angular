@@ -33,7 +33,7 @@ public class CourseRequestsHandler implements CourseService {
         CourseLevel level = CourseLevel.valueOf(courseData.getLevel());
         
         DetailedCourse course = DetailedCourse.fromCreatingCourseData(courseData, teacher, level);
-        DetailedCourse saved = repository.createDetailedCourse(course);
+        DetailedCourse saved = repository.saveDetailedCourse(course);
         
         return new DetailedCourseCreatedEvent(saved);
     }

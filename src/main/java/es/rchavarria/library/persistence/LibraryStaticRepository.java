@@ -32,12 +32,17 @@ public class LibraryStaticRepository implements LibraryRepository {
         return Collections.emptyList();
     }
 
-    public Teacher findTeacher(long teacher) {
-        throw new RuntimeException("not implemented yet");
+    public Teacher findTeacher(long idTeacher) {
+        Teacher teacher = new Teacher();
+        
+        teacher.setIdTeacher(idTeacher);
+        teacher.setName("Teacher " + idTeacher);
+        
+        return teacher;
     }
 
-    public DetailedCourse createDetailedCourse(DetailedCourse course) {
-        throw new RuntimeException("not implemented yet");
+    public DetailedCourse saveDetailedCourse(DetailedCourse course) {
+        return createDetailedCourse();
     }
 
 }

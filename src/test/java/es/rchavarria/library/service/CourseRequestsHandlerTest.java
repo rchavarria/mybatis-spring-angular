@@ -42,7 +42,7 @@ public class CourseRequestsHandlerTest {
         long idCourse = 12345;
         long idTeacher = 112233;
         
-        when(repository.createDetailedCourse(any(DetailedCourse.class)))
+        when(repository.saveDetailedCourse(any(DetailedCourse.class)))
             .thenReturn(createCourse(idCourse));
         
         DetailedCourseCreatedEvent event = 
@@ -52,7 +52,7 @@ public class CourseRequestsHandlerTest {
         assertEquals(12345, created.getIdCourse());
         
         verify(repository, times(1)).findTeacher(idTeacher);
-        verify(repository, times(1)).createDetailedCourse(any(DetailedCourse.class));
+        verify(repository, times(1)).saveDetailedCourse(any(DetailedCourse.class));
     }
 
 }

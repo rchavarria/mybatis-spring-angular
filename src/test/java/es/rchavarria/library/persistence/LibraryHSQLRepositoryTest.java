@@ -1,12 +1,15 @@
 package es.rchavarria.library.persistence;
 
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.InjectMocks;
+
+import es.rchavarria.library.domain.DetailedCourse;
 
 public class LibraryHSQLRepositoryTest {
 
@@ -25,15 +28,25 @@ public class LibraryHSQLRepositoryTest {
     @Test
     public void testListCoursesUsesCourseMapper() {
         repository.listDetailedCourses();
-        
         verify(courseMapper).list();
+    }
+    
+    @Test
+    public void testSaveCourseUsesCourseMapper() {
+        repository.saveDetailedCourse(any(DetailedCourse.class));
+        verify(courseMapper).save(any(DetailedCourse.class));
     }
     
     @Test
     public void testListTeachersUsesTeacherMapper() {
         repository.listTeachers();
-        
         verify(teacherMapper).list();
+    }
+    
+    @Test
+    public void testFindTeacherByIdUsesTeacherMapper()  {
+        repository.findTeacher(12345);
+        verify(teacherMapper).findById(12345);
     }
 
 }

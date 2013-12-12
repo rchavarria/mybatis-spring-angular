@@ -9,4 +9,6 @@ public interface CourseMapper {
     public List<DetailedCourse> list();
     
     public DetailedCourse findById(long idCourse);
+
+    public DetailedCourse save(DetailedCourse course);
 }

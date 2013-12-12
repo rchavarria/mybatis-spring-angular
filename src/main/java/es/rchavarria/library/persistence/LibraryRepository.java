@@ -8,11 +8,11 @@ import es.rchavarria.library.domain.Teacher;
 public interface LibraryRepository {
 
     public List<DetailedCourse> listDetailedCourses();
+
+    public DetailedCourse saveDetailedCourse(DetailedCourse course);
     
     public List<Teacher> listTeachers();
-
+    
     public Teacher findTeacher(long teacher);
-
-    public DetailedCourse createDetailedCourse(DetailedCourse course);
 
 }

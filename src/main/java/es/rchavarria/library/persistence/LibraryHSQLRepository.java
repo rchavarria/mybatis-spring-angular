@@ -23,16 +23,16 @@ public class LibraryHSQLRepository implements LibraryRepository {
         return courseMapper.list();
     }
     
+    public DetailedCourse saveDetailedCourse(DetailedCourse course) {
+        return courseMapper.save(course);
+    }
+    
     public List<Teacher> listTeachers() {
         return teacherMapper.list();
     }
 
-    public Teacher findTeacher(long teacher) {
-        throw new RuntimeException("not implemented yet");
-    }
-
-    public DetailedCourse createDetailedCourse(DetailedCourse course) {
-        throw new RuntimeException("not implemented yet");
+    public Teacher findTeacher(long idTeacher) {
+        return teacherMapper.findById(idTeacher);
     }
 
 }
