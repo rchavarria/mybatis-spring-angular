@@ -1,5 +1,6 @@
 package es.rchavarria.library.core.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import es.rchavarria.library.core.event.AllCoursesEvent;
 import es.rchavarria.library.core.event.CreateCourseEvent;
 import es.rchavarria.library.core.event.DetailedCourseCreatedEvent;
 import es.rchavarria.library.core.persistence.LibraryRepository;
+import es.rchavarria.library.rest.domain.Course;
 import es.rchavarria.library.rest.domain.CreatingCourseData;
 
 public class CourseRequestsHandler implements CourseService {
@@ -23,7 +25,13 @@ public class CourseRequestsHandler implements CourseService {
     }
     
     public AllCoursesEvent requestAllCourses() {
-        List<DetailedCourse> courses = repository.listDetailedCourses();
+        List<DetailedCourse> detailedCourses = repository.listDetailedCourses();
+        List<Course> courses = new ArrayList<Course>(detailedCourses.size());
+        
+        for(DetailedCourse dc : detailedCourses) {
+            courses.add(Course.fromDetailedCourse(dc));
+        }
+        
         return new AllCoursesEvent(courses);
     }
 

@@ -69,7 +69,7 @@ public class CourseMapperIntegrationTest {
     
     @Test
     public void testSaveCourse() {
-        DetailedCourse course = RESTDataFixture.createCourse(100);
+        DetailedCourse course = RESTDataFixture.createDetailedCourse(100);
         course.getTeacher().setIdTeacher(0);
 
         int oldNumberOfRecords = courseMapper.listActiveCourses().size();

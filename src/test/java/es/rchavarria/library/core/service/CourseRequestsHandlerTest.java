@@ -1,6 +1,6 @@
 package es.rchavarria.library.core.service;
 
-import static es.rchavarria.library.rest.controller.fixture.RESTDataFixture.createCourse;
+import static es.rchavarria.library.rest.controller.fixture.RESTDataFixture.createDetailedCourse;
 import static es.rchavarria.library.rest.controller.fixture.RESTDataFixture.createDetailedCourseEvent;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
@@ -44,7 +44,7 @@ public class CourseRequestsHandlerTest {
         long idTeacher = 112233;
         
         when(repository.saveDetailedCourse(any(DetailedCourse.class)))
-            .thenReturn(createCourse(idCourse));
+            .thenReturn(createDetailedCourse(idCourse));
         
         DetailedCourseCreatedEvent event = 
                 handler.createDetailedCourse(createDetailedCourseEvent(idTeacher));

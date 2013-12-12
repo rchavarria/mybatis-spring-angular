@@ -12,12 +12,13 @@ import es.rchavarria.library.core.event.AllCoursesEvent;
 import es.rchavarria.library.core.event.AllTeachersEvent;
 import es.rchavarria.library.core.event.CreateCourseEvent;
 import es.rchavarria.library.core.event.DetailedCourseCreatedEvent;
+import es.rchavarria.library.rest.domain.Course;
 import es.rchavarria.library.rest.domain.CreatingCourseData;
 
 public class RESTDataFixture {
 
     public static AllCoursesEvent allCourses() {
-        List<DetailedCourse> courses = new ArrayList<DetailedCourse>(3);
+        List<Course> courses = new ArrayList<Course>(3);
         
         courses.add(createCourse(1));
         courses.add(createCourse(3));
@@ -26,7 +27,7 @@ public class RESTDataFixture {
         return new AllCoursesEvent(courses);
     }
 
-    public static DetailedCourse createCourse(long id) {
+    public static DetailedCourse createDetailedCourse(long id) {
         DetailedCourse course = new DetailedCourse();
         
         course.setIdCourse(id);
@@ -37,6 +38,10 @@ public class RESTDataFixture {
         course.setActive(true);
         
         return course;
+    }
+
+    public static Course createCourse(long id) {
+        return Course.fromDetailedCourse(createDetailedCourse(id));
     }
 
     public static AllTeachersEvent allTeachers() {
@@ -63,7 +68,7 @@ public class RESTDataFixture {
     }
     
     public static DetailedCourseCreatedEvent courseCreated(long id) {
-        return new DetailedCourseCreatedEvent(createCourse(id));
+        return new DetailedCourseCreatedEvent(createDetailedCourse(id));
     }
 
     public static String standardCourseJSON(long id) {

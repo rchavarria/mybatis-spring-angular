@@ -1,6 +1,5 @@
 package es.rchavarria.library.rest.controller;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import es.rchavarria.library.core.domain.DetailedCourse;
 import es.rchavarria.library.core.service.CourseService;
 import es.rchavarria.library.rest.domain.Course;
 
@@ -31,13 +29,7 @@ public class CourseQueriesController {
     @ResponseBody
     public List<Course> getAllCourses() {
         LOGGER.info("all courses will be returned");
-        List<Course> courses = new LinkedList<Course>();
-        
-        for(DetailedCourse detailedCourse : courseService.requestAllCourses().getCourses()) {
-            courses.add(Course.fromDetailedCourse(detailedCourse));
-        }
-        
-        return courses;
+        return courseService.requestAllCourses().getCourses();
     }
 
 }
