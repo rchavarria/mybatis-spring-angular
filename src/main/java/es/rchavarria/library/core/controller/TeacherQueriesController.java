@@ -1,4 +1,4 @@
-package es.rchavarria.library.controller;
+package es.rchavarria.library.core.controller;
 
 import java.util.LinkedList;
 import java.util.List;

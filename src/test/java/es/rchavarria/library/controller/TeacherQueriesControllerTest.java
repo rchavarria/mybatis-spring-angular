@@ -11,6 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import es.rchavarria.library.core.controller.TeacherQueriesController;
 import es.rchavarria.library.service.TeacherService;
 
 public class TeacherQueriesControllerTest {

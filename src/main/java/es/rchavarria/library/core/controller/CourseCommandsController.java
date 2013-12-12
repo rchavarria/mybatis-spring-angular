@@ -1,4 +1,4 @@
-package es.rchavarria.library.controller;
+package es.rchavarria.library.core.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

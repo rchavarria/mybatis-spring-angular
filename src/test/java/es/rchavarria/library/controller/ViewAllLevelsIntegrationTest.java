@@ -17,6 +17,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.test.web.servlet.MockMvc;
 
+import es.rchavarria.library.core.controller.LevelQueriesController;
 import es.rchavarria.library.domain.CourseLevel;
 import es.rchavarria.library.service.LevelService;
 

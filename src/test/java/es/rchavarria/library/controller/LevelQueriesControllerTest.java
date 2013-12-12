@@ -11,6 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import es.rchavarria.library.core.controller.LevelQueriesController;
 import es.rchavarria.library.service.LevelService;
 
 public class LevelQueriesControllerTest {
