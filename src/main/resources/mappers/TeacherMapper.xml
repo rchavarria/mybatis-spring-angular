@@ -3,7 +3,7 @@
 
 <mapper namespace="es.rchavarria.library.persistence.TeacherMapper">
 
-    <resultMap id="teacherResult" type="es.rchavarria.library.domain.Teacher">
+    <resultMap id="teacherResult" type="es.rchavarria.library.core.domain.Teacher">
         <id column="idTeacher" property="idTeacher" javaType="long"/>
         <result column="name" property="name" javaType="string"/>
     </resultMap>

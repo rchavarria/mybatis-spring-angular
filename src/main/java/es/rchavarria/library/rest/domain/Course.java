@@ -1,7 +1,7 @@
 package es.rchavarria.library.rest.domain;
 
-import es.rchavarria.library.domain.CourseLevel;
-import es.rchavarria.library.domain.DetailedCourse;
+import es.rchavarria.library.core.domain.CourseLevel;
+import es.rchavarria.library.core.domain.DetailedCourse;
 
 public class Course {
 

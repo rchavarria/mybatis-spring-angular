@@ -9,7 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import es.rchavarria.library.domain.DetailedCourse;
+import es.rchavarria.library.core.domain.DetailedCourse;
 
 public class LibraryHSQLRepositoryTest {
 

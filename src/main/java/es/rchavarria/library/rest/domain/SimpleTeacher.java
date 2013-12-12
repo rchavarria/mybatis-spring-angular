@@ -1,6 +1,6 @@
 package es.rchavarria.library.rest.domain;
 
-import es.rchavarria.library.domain.Teacher;
+import es.rchavarria.library.core.domain.Teacher;
 
 public class SimpleTeacher {
 

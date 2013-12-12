@@ -13,8 +13,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.rchavarria.library.config.CoreConfig;
 import es.rchavarria.library.core.controller.fixture.RESTDataFixture;
-import es.rchavarria.library.domain.CourseLevel;
-import es.rchavarria.library.domain.DetailedCourse;
+import es.rchavarria.library.core.domain.CourseLevel;
+import es.rchavarria.library.core.domain.DetailedCourse;
   
 @SuppressWarnings("restriction")
 @RunWith(SpringJUnit4ClassRunner.class)

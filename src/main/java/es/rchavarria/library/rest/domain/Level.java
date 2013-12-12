@@ -1,6 +1,6 @@
 package es.rchavarria.library.rest.domain;
 
-import es.rchavarria.library.domain.CourseLevel;
+import es.rchavarria.library.core.domain.CourseLevel;
 
 public class Level {
 

@@ -2,8 +2,8 @@ package es.rchavarria.library.persistence;
 
 import java.util.List;
 
-import es.rchavarria.library.domain.DetailedCourse;
-import es.rchavarria.library.domain.Teacher;
+import es.rchavarria.library.core.domain.DetailedCourse;
+import es.rchavarria.library.core.domain.Teacher;
 
 public interface LibraryRepository {
 

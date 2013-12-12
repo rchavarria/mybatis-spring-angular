@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 
-import es.rchavarria.library.domain.CourseLevel;
+import es.rchavarria.library.core.domain.CourseLevel;
 
 public class LevelRequestHandlerTest {
 

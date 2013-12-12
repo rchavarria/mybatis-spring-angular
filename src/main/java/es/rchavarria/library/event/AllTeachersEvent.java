@@ -2,7 +2,7 @@ package es.rchavarria.library.event;
 
 import java.util.List;
 
-import es.rchavarria.library.domain.Teacher;
+import es.rchavarria.library.core.domain.Teacher;
 
 public class AllTeachersEvent {
 

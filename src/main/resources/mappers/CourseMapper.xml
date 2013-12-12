@@ -3,10 +3,10 @@
 
 <mapper namespace="es.rchavarria.library.persistence.CourseMapper">
 
-    <resultMap id="courseWithTeacher" type="es.rchavarria.library.domain.DetailedCourse">
+    <resultMap id="courseWithTeacher" type="es.rchavarria.library.core.domain.DetailedCourse">
         <id column="idCourse" property="idCourse" javaType="long"/>
         <result column="title" property="title" javaType="string"/>
-        <result column="level" property="level" javaType="es.rchavarria.library.domain.CourseLevel"/>
+        <result column="level" property="level" javaType="es.rchavarria.library.core.domain.CourseLevel"/>
         <result column="hoursLong" property="hoursLong" javaType="float"/>
         <result column="active" property="active" javaType="boolean"/>
         <association property="teacher" column="idTeacher" 
@@ -30,7 +30,7 @@
         WHERE idCourse = #{idCourse}
     </select>
 
-    <insert id="save" parameterType="es.rchavarria.library.domain.DetailedCourse">
+    <insert id="save" parameterType="es.rchavarria.library.core.domain.DetailedCourse">
         INSERT INTO courses
         (idCourse, title, level, hoursLong, active, idTeacher)
         VALUES

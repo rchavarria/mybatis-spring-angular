@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import es.rchavarria.library.domain.Teacher;
+import es.rchavarria.library.core.domain.Teacher;
 import es.rchavarria.library.rest.domain.SimpleTeacher;
 import es.rchavarria.library.service.TeacherService;
 

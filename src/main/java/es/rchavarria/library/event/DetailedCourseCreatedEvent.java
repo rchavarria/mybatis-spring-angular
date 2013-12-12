@@ -1,6 +1,6 @@
 package es.rchavarria.library.event;
 
-import es.rchavarria.library.domain.DetailedCourse;
+import es.rchavarria.library.core.domain.DetailedCourse;
 
 public class DetailedCourseCreatedEvent {
 

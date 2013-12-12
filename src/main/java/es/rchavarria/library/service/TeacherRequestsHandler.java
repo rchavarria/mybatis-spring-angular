@@ -1,9 +1,10 @@
 package es.rchavarria.library.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
-import es.rchavarria.library.domain.Teacher;
+import es.rchavarria.library.core.domain.Teacher;
 import es.rchavarria.library.event.AllTeachersEvent;
 import es.rchavarria.library.persistence.LibraryRepository;
 

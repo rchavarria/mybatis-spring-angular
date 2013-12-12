@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import es.rchavarria.library.domain.CourseLevel;
-import es.rchavarria.library.domain.DetailedCourse;
-import es.rchavarria.library.domain.Teacher;
+import es.rchavarria.library.core.domain.CourseLevel;
+import es.rchavarria.library.core.domain.DetailedCourse;
+import es.rchavarria.library.core.domain.Teacher;
 import es.rchavarria.library.event.AllCourseLevelsEvent;
 import es.rchavarria.library.event.AllCoursesEvent;
 import es.rchavarria.library.event.AllTeachersEvent;

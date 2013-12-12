@@ -1,4 +1,4 @@
-package es.rchavarria.library.domain;
+package es.rchavarria.library.core.domain;
 
 import es.rchavarria.library.rest.domain.CreatingCourseData;
 

@@ -14,7 +14,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import es.rchavarria.library.domain.DetailedCourse;
+import es.rchavarria.library.core.domain.DetailedCourse;
 import es.rchavarria.library.event.DetailedCourseCreatedEvent;
 import es.rchavarria.library.persistence.LibraryRepository;
 
