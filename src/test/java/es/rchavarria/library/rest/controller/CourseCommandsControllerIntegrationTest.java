@@ -1,4 +1,4 @@
-package es.rchavarria.library.core.controller;
+package es.rchavarria.library.rest.controller;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
@@ -17,8 +17,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static es.rchavarria.library.core.controller.fixture.RESTDataFixture.courseCreated;
-import static es.rchavarria.library.core.controller.fixture.RESTDataFixture.standardCourseJSON;
+import static es.rchavarria.library.rest.controller.fixture.RESTDataFixture.courseCreated;
+import static es.rchavarria.library.rest.controller.fixture.RESTDataFixture.standardCourseJSON;
 import es.rchavarria.library.core.event.CreateDetailedCourseEvent;
 import es.rchavarria.library.rest.controller.CourseCommandsController;
 import es.rchavarria.library.service.CourseService;

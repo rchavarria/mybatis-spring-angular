@@ -1,6 +1,6 @@
-package es.rchavarria.library.core.controller;
+package es.rchavarria.library.rest.controller;
 
-import static es.rchavarria.library.core.controller.fixture.RESTDataFixture.allCourses;
+import static es.rchavarria.library.rest.controller.fixture.RESTDataFixture.allCourses;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
