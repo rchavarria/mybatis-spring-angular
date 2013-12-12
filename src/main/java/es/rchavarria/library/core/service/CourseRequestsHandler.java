@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import es.rchavarria.library.core.domain.CourseLevel;
 import es.rchavarria.library.core.domain.DetailedCourse;
-import es.rchavarria.library.core.domain.Teacher;
+import es.rchavarria.library.core.domain.DetailedTeacher;
 import es.rchavarria.library.core.event.AllCoursesEvent;
 import es.rchavarria.library.core.event.CreateDetailedCourseEvent;
 import es.rchavarria.library.core.event.DetailedCourseCreatedEvent;
@@ -29,7 +29,7 @@ public class CourseRequestsHandler implements CourseService {
 
     public DetailedCourseCreatedEvent createDetailedCourse(CreateDetailedCourseEvent event) {
         CreatingCourseData courseData = event.getCourseData();
-        Teacher teacher = repository.findTeacher(courseData.getTeacher());
+        DetailedTeacher teacher = repository.findTeacher(courseData.getTeacher());
         CourseLevel level = CourseLevel.valueOf(courseData.getLevel());
         
         DetailedCourse course = DetailedCourse.fromCreatingCourseData(courseData, teacher, level);

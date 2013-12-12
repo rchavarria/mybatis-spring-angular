@@ -12,7 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.rchavarria.library.config.CoreConfig;
-import es.rchavarria.library.core.domain.Teacher;
+import es.rchavarria.library.core.domain.DetailedTeacher;
 import es.rchavarria.library.core.persistence.TeacherMapper;
   
 @SuppressWarnings("restriction")
@@ -25,16 +25,16 @@ public class TeacherMapperIntegrationTest {
     
     @Test
     public void testListAllTeachers() {
-        List<Teacher> teachers = teacherMapper.list();
+        List<DetailedTeacher> teachers = teacherMapper.list();
         assertEquals("test-data.sql insterts 5 teachers", 5, teachers.size());
     }  
     
     @Test
     public void testAllTeachersData() {
-        List<Teacher> teachers = teacherMapper.list();
+        List<DetailedTeacher> teachers = teacherMapper.list();
         
         for(int i = 0; i < teachers.size(); i++) {
-            Teacher teacher = teachers.get(i);
+            DetailedTeacher teacher = teachers.get(i);
             assertEquals(i, teacher.getIdTeacher());
             assertEquals("Teacher " + (i + 1), teacher.getName());
         }

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import es.rchavarria.library.core.domain.DetailedCourse;
-import es.rchavarria.library.core.domain.Teacher;
+import es.rchavarria.library.core.domain.DetailedTeacher;
 
 public class LibraryHSQLRepository implements LibraryRepository {
 
@@ -28,11 +28,11 @@ public class LibraryHSQLRepository implements LibraryRepository {
         return course;
     }
     
-    public List<Teacher> listTeachers() {
+    public List<DetailedTeacher> listTeachers() {
         return teacherMapper.list();
     }
 
-    public Teacher findTeacher(long idTeacher) {
+    public DetailedTeacher findTeacher(long idTeacher) {
         return teacherMapper.findById(idTeacher);
     }
 

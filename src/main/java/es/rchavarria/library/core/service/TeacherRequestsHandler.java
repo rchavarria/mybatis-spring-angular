@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import es.rchavarria.library.core.domain.Teacher;
+import es.rchavarria.library.core.domain.DetailedTeacher;
 import es.rchavarria.library.core.event.AllTeachersEvent;
 import es.rchavarria.library.core.persistence.LibraryRepository;
 
@@ -18,7 +18,7 @@ public class TeacherRequestsHandler implements TeacherService {
     }
     
     public AllTeachersEvent requestAllTeachers() {
-        List<Teacher> teachers = repository.listTeachers();
+        List<DetailedTeacher> teachers = repository.listTeachers();
         return new AllTeachersEvent(teachers);
     }
 

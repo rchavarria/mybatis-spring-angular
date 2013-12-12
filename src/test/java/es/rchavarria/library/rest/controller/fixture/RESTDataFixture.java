@@ -6,7 +6,7 @@ import java.util.List;
 
 import es.rchavarria.library.core.domain.CourseLevel;
 import es.rchavarria.library.core.domain.DetailedCourse;
-import es.rchavarria.library.core.domain.Teacher;
+import es.rchavarria.library.core.domain.DetailedTeacher;
 import es.rchavarria.library.core.event.AllCourseLevelsEvent;
 import es.rchavarria.library.core.event.AllCoursesEvent;
 import es.rchavarria.library.core.event.AllTeachersEvent;
@@ -40,7 +40,7 @@ public class RESTDataFixture {
     }
 
     public static AllTeachersEvent allTeachers() {
-        List<Teacher> teachers = new ArrayList<Teacher>(3);
+        List<DetailedTeacher> teachers = new ArrayList<DetailedTeacher>(3);
         
         teachers.add(createTeacher(0));
         teachers.add(createTeacher(1));
@@ -49,8 +49,8 @@ public class RESTDataFixture {
         return new AllTeachersEvent(teachers);
     }
     
-    private static Teacher createTeacher(long id) {
-        Teacher teacher = new Teacher();
+    private static DetailedTeacher createTeacher(long id) {
+        DetailedTeacher teacher = new DetailedTeacher();
         
         teacher.setIdTeacher(id);
         teacher.setName("Teacher " + id);

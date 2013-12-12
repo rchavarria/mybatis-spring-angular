@@ -1,6 +1,6 @@
 package es.rchavarria.library.rest.domain;
 
-import es.rchavarria.library.core.domain.Teacher;
+import es.rchavarria.library.core.domain.DetailedTeacher;
 
 public class SimpleTeacher {
 
@@ -15,7 +15,7 @@ public class SimpleTeacher {
         return name;
     }
 
-    public static SimpleTeacher fromTeacher(Teacher teacher) {
+    public static SimpleTeacher fromTeacher(DetailedTeacher teacher) {
         SimpleTeacher t = new SimpleTeacher();
         
         t.idTeacher = teacher.getIdTeacher();

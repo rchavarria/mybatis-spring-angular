@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import es.rchavarria.library.core.domain.Teacher;
+import es.rchavarria.library.core.domain.DetailedTeacher;
 import es.rchavarria.library.core.service.TeacherService;
 import es.rchavarria.library.rest.domain.SimpleTeacher;
 
@@ -33,7 +33,7 @@ public class TeacherQueriesController {
         LOGGER.info("all teachers will be returned");
         List<SimpleTeacher> teachers = new LinkedList<SimpleTeacher>();
         
-        for(Teacher teacher : teacherService.requestAllTeachers().getTeachers()) {
+        for(DetailedTeacher teacher : teacherService.requestAllTeachers().getTeachers()) {
             teachers.add(SimpleTeacher.fromTeacher(teacher));
         }
         

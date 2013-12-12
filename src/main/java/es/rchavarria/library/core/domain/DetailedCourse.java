@@ -6,7 +6,7 @@ public class DetailedCourse {
 
     private long idCourse;
     private String title;
-    private Teacher teacher;
+    private DetailedTeacher teacher;
     private CourseLevel level;
     private float hoursLong;
     private boolean active;
@@ -23,10 +23,10 @@ public class DetailedCourse {
     public void setTitle(String title) {
         this.title = title;
     }
-    public Teacher getTeacher() {
+    public DetailedTeacher getTeacher() {
         return teacher;
     }
-    public void setTeacher(Teacher teacher) {
+    public void setTeacher(DetailedTeacher teacher) {
         this.teacher = teacher;
     }
     public CourseLevel getLevel() {
@@ -49,7 +49,7 @@ public class DetailedCourse {
     }
     
     public static DetailedCourse fromCreatingCourseData(CreatingCourseData courseData,
-                                                        Teacher teacher,
+                                                        DetailedTeacher teacher,
                                                         CourseLevel level) {
         DetailedCourse detailedCourse = new DetailedCourse();
         

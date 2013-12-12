@@ -2,11 +2,11 @@ package es.rchavarria.library.core.persistence;
 
 import java.util.List;
 
-import es.rchavarria.library.core.domain.Teacher;
+import es.rchavarria.library.core.domain.DetailedTeacher;
 
 public interface TeacherMapper {
 
-    public List<Teacher> list();
+    public List<DetailedTeacher> list();
 
-    public Teacher findById(long idTeacher);
+    public DetailedTeacher findById(long idTeacher);
 }

@@ -1,6 +1,6 @@
 package es.rchavarria.library.core.domain;
 
-public class Teacher {
+public class DetailedTeacher {
 
     private long idTeacher;
     private String name;
