@@ -54,5 +54,13 @@ describe("Creating course controller", function () {
         expect(scope.levels.length).toBe(3);
         expect(scope.levels).toEqualData(returnedLevels());
     });
+    
+    it("sends data using POST to 'courses' via save() method", function () {
+        var expectedCourseToBeSent = {title: "dummy", teacher: 1234, level: "foo"};
+        $httpBackend.expectPOST("courses", expectedCourseToBeSent, undefined).respond(201, "");
+
+        scope.course = expectedCourseToBeSent;
+        scope.save();
+    })
 
 });
