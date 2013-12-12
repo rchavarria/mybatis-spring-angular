@@ -21,6 +21,6 @@ public class CoreConfigIntegrationTest {
     @Test
     public void testRequestAllCourses() {
         AllCoursesEvent event = courseService.requestAllCourses();
-        assertEquals(15, event.getCourses().size());
+        assertEquals(10, event.getCourses().size());
     }
 }

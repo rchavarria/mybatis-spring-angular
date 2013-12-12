@@ -6,7 +6,7 @@ import es.rchavarria.library.domain.DetailedCourse;
 
 public interface CourseMapper {
 
-    public List<DetailedCourse> list();
+    public List<DetailedCourse> listActiveCourses();
     
     public DetailedCourse findById(long idCourse);
 

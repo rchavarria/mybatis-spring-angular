@@ -29,9 +29,6 @@ public class DetailedCourse {
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
-    public long getIdTeacher() {
-        return teacher.getIdTeacher();
-    }
     public CourseLevel getLevel() {
         return level;
     }

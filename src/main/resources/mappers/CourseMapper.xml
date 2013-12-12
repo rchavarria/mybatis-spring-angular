@@ -20,8 +20,9 @@
         ON teachers.idTeacher = courses.idTeacher
     </sql>
 
-    <select id="list" resultMap="courseWithTeacher">
+    <select id="listActiveCourses" resultMap="courseWithTeacher">
         <include refid="selectCoursesWithTeachers"/>
+        WHERE active = 1
     </select>
     
     <select id="findById" resultMap="courseWithTeacher" parameterType="long">

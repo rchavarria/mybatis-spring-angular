@@ -26,8 +26,8 @@ public class CourseMapperIntegrationTest {
 
     @Test
     public void testListAllCourses() {
-        List<DetailedCourse> courses = courseMapper.list();
-        assertEquals("test-data.sql inserts 15 courses", 15, courses.size());
+        List<DetailedCourse> courses = courseMapper.listActiveCourses();
+        assertEquals("test-data.sql inserts 10 active courses, 5 inactive", 10, courses.size());
     }
 
     @Test
@@ -71,9 +71,9 @@ public class CourseMapperIntegrationTest {
         DetailedCourse course = RESTDataFixture.createCourse(100);
         course.getTeacher().setIdTeacher(0);
 
-        int oldNumberOfRecords = courseMapper.list().size();
+        int oldNumberOfRecords = courseMapper.listActiveCourses().size();
         courseMapper.save(course);
-        int newNumberOfRecords = courseMapper.list().size();
+        int newNumberOfRecords = courseMapper.listActiveCourses().size();
         
         assertEquals(newNumberOfRecords, oldNumberOfRecords + 1);
     }

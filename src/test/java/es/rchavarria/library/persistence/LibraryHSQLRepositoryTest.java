@@ -28,7 +28,7 @@ public class LibraryHSQLRepositoryTest {
     @Test
     public void testListCoursesUsesCourseMapper() {
         repository.listDetailedCourses();
-        verify(courseMapper).list();
+        verify(courseMapper).listActiveCourses();
     }
     
     @Test

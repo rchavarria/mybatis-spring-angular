@@ -11,16 +11,8 @@ public class SimpleTeacher {
         return idTeacher;
     }
 
-    public void setIdTeacher(long idTeacher) {
-        this.idTeacher = idTeacher;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public static SimpleTeacher fromTeacher(Teacher teacher) {
