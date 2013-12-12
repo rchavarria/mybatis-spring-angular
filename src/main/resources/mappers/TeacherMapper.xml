@@ -8,7 +8,16 @@
         <result column="name" property="name" javaType="string"/>
     </resultMap>
 
-    <select id="list" resultMap="teacherResult">
+    <sql id="selectTeachers">
         SELECT * FROM teachers
+    </sql>
+
+    <select id="list" resultMap="teacherResult">
+        <include refid="selectTeachers"/>
+    </select>
+
+    <select id="findById" resultMap="teacherResult" parameterType="long">
+        <include refid="selectTeachers"/>
+        WHERE idTeacher = #{idTeacher}
     </select>
 </mapper>

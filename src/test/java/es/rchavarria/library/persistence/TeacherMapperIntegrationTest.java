@@ -23,13 +23,13 @@ public class TeacherMapperIntegrationTest {
     TeacherMapper teacherMapper;  
     
     @Test
-    public void testListAllCourses() {
+    public void testListAllTeachers() {
         List<Teacher> teachers = teacherMapper.list();
         assertEquals("test-data.sql insterts 5 teachers", 5, teachers.size());
     }  
     
     @Test
-    public void testFirstTeacherData() {
+    public void testAllTeachersData() {
         List<Teacher> teachers = teacherMapper.list();
         
         for(int i = 0; i < teachers.size(); i++) {
@@ -37,6 +37,12 @@ public class TeacherMapperIntegrationTest {
             assertEquals(i, teacher.getIdTeacher());
             assertEquals("Teacher " + (i + 1), teacher.getName());
         }
-    }  
+    }
+    
+    @Test
+    public void testFindTeacherById() {
+        assertEquals("Teacher 1", teacherMapper.findById(0).getName());
+        assertEquals("Teacher 5", teacherMapper.findById(4).getName());
+    }
   
 }
