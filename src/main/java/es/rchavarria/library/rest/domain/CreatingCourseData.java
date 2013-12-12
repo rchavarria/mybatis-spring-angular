@@ -2,19 +2,12 @@ package es.rchavarria.library.rest.domain;
 
 public class CreatingCourseData {
 
-    private long idCourse;
     private String title;
     private long teacher;
     private String level;
     private float hoursLong;
     private boolean active;
     
-    public long getIdCourse() {
-        return idCourse;
-    }
-    public void setIdCourse(long idCourse) {
-        this.idCourse = idCourse;
-    }
     public String getTitle() {
         return title;
     }

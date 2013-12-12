@@ -11,4 +11,8 @@ public interface LibraryRepository {
     
     public List<Teacher> listTeachers();
 
+    public Teacher findTeacher(long teacher);
+
+    public DetailedCourse createDetailedCourse(DetailedCourse course);
+
 }

@@ -9,5 +9,9 @@ public class CreateDetailedCourseEvent {
     public CreateDetailedCourseEvent(CreatingCourseData course) {
         this.course = course;
     }
+    
+    public CreatingCourseData getCourseData() {
+        return course;
+    }
 
 }

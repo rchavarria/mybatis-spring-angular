@@ -1,5 +1,7 @@
 package es.rchavarria.library.domain;
 
+import es.rchavarria.library.rest.domain.CreatingCourseData;
+
 public class DetailedCourse {
 
     private long idCourse;
@@ -44,6 +46,20 @@ public class DetailedCourse {
     }
     public void setActive(boolean active) {
         this.active = active;
+    }
+    
+    public static DetailedCourse fromCreatingCourseData(CreatingCourseData courseData,
+                                                        Teacher teacher,
+                                                        CourseLevel level) {
+        DetailedCourse detailedCourse = new DetailedCourse();
+        
+        detailedCourse.title = courseData.getTitle();
+        detailedCourse.teacher = teacher;
+        detailedCourse.level = level;
+        detailedCourse.hoursLong = courseData.getHoursLong();
+        detailedCourse.active = courseData.isActive();
+        
+        return detailedCourse;
     }
 
 }

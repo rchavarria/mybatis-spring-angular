@@ -10,7 +10,9 @@ import es.rchavarria.library.domain.Teacher;
 import es.rchavarria.library.event.AllCourseLevelsEvent;
 import es.rchavarria.library.event.AllCoursesEvent;
 import es.rchavarria.library.event.AllTeachersEvent;
+import es.rchavarria.library.event.CreateDetailedCourseEvent;
 import es.rchavarria.library.event.DetailedCourseCreatedEvent;
+import es.rchavarria.library.rest.domain.CreatingCourseData;
 
 public class RESTDataFixture {
 
@@ -24,7 +26,7 @@ public class RESTDataFixture {
         return new AllCoursesEvent(courses);
     }
 
-    private static DetailedCourse createCourse(long id) {
+    public static DetailedCourse createCourse(long id) {
         DetailedCourse course = new DetailedCourse();
         
         course.setIdCourse(id);
@@ -65,6 +67,22 @@ public class RESTDataFixture {
     }
 
     public static String standardCourseJSON(long id) {
-        return "{ \"idCourse\": " + id + " }";
+        return "{ \"title\": \"Title " + id + "\" }";
+    }
+    
+    public static CreateDetailedCourseEvent createDetailedCourseEvent(long idTeacher) {
+        return new CreateDetailedCourseEvent(createCreatingCourseData(idTeacher));
+    }
+
+    private static CreatingCourseData createCreatingCourseData(long idTeacher) {
+        CreatingCourseData data = new CreatingCourseData();
+        
+        data.setTitle("Title 1");
+        data.setTeacher(idTeacher);
+        data.setLevel("BASIC");
+        data.setHoursLong(12.5f);
+        data.setActive(true);
+        
+        return data;
     }
 }
