@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "es.rchavarria.library.core.controller" })
+@ComponentScan(basePackages = { "es.rchavarria.library.rest.controller" })
 public class MVCConfig extends WebMvcConfigurerAdapter {
 
     /**
