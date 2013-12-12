@@ -1,4 +1,4 @@
-package es.rchavarria.library.event;
+package es.rchavarria.library.core.event;
 
 import es.rchavarria.library.core.domain.DetailedCourse;
 

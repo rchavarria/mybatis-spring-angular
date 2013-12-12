@@ -7,11 +7,11 @@ import java.util.List;
 import es.rchavarria.library.core.domain.CourseLevel;
 import es.rchavarria.library.core.domain.DetailedCourse;
 import es.rchavarria.library.core.domain.Teacher;
-import es.rchavarria.library.event.AllCourseLevelsEvent;
-import es.rchavarria.library.event.AllCoursesEvent;
-import es.rchavarria.library.event.AllTeachersEvent;
-import es.rchavarria.library.event.CreateDetailedCourseEvent;
-import es.rchavarria.library.event.DetailedCourseCreatedEvent;
+import es.rchavarria.library.core.event.AllCourseLevelsEvent;
+import es.rchavarria.library.core.event.AllCoursesEvent;
+import es.rchavarria.library.core.event.AllTeachersEvent;
+import es.rchavarria.library.core.event.CreateDetailedCourseEvent;
+import es.rchavarria.library.core.event.DetailedCourseCreatedEvent;
 import es.rchavarria.library.rest.domain.CreatingCourseData;
 
 public class RESTDataFixture {

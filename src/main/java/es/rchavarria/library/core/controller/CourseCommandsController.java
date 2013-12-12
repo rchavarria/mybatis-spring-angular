@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import es.rchavarria.library.event.CreateDetailedCourseEvent;
-import es.rchavarria.library.event.DetailedCourseCreatedEvent;
+import es.rchavarria.library.core.event.CreateDetailedCourseEvent;
+import es.rchavarria.library.core.event.DetailedCourseCreatedEvent;
 import es.rchavarria.library.rest.domain.Course;
 import es.rchavarria.library.rest.domain.CreatingCourseData;
 import es.rchavarria.library.service.CourseService;

@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static es.rchavarria.library.core.controller.fixture.RESTDataFixture.courseCreated;
 import static es.rchavarria.library.core.controller.fixture.RESTDataFixture.standardCourseJSON;
 import es.rchavarria.library.core.controller.CourseCommandsController;
-import es.rchavarria.library.event.CreateDetailedCourseEvent;
+import es.rchavarria.library.core.event.CreateDetailedCourseEvent;
 import es.rchavarria.library.service.CourseService;
 
 public class CourseCommandsControllerIntegrationTest {
