@@ -16,7 +16,7 @@ import org.mockito.MockitoAnnotations;
 
 import es.rchavarria.library.core.domain.DetailedCourse;
 import es.rchavarria.library.core.event.DetailedCourseCreatedEvent;
-import es.rchavarria.library.persistence.LibraryRepository;
+import es.rchavarria.library.core.persistence.LibraryRepository;
 
 public class CourseRequestsHandlerTest {
 

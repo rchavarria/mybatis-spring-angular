@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import es.rchavarria.library.core.domain.Teacher;
 import es.rchavarria.library.core.event.AllTeachersEvent;
-import es.rchavarria.library.persistence.LibraryRepository;
+import es.rchavarria.library.core.persistence.LibraryRepository;
 
 public class TeacherRequestsHandler implements TeacherService {
 

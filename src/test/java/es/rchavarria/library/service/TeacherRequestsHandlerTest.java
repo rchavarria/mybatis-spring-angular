@@ -8,7 +8,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.InjectMocks;
 
-import es.rchavarria.library.persistence.LibraryRepository;
+import es.rchavarria.library.core.persistence.LibraryRepository;
 
 public class TeacherRequestsHandlerTest {
 

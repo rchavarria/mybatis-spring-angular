@@ -1,4 +1,4 @@
-package es.rchavarria.library.persistence;
+package es.rchavarria.library.core.persistence;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import es.rchavarria.library.config.CoreConfig;
 import es.rchavarria.library.core.domain.CourseLevel;
 import es.rchavarria.library.core.domain.DetailedCourse;
+import es.rchavarria.library.core.persistence.CourseMapper;
 import es.rchavarria.library.rest.controller.fixture.RESTDataFixture;
   
 @SuppressWarnings("restriction")

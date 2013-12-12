@@ -1,4 +1,4 @@
-package es.rchavarria.library.persistence;
+package es.rchavarria.library.core.persistence;
 
 import java.util.List;
 

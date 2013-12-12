@@ -14,10 +14,10 @@ import org.springframework.core.io.Resource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
-import es.rchavarria.library.persistence.CourseMapper;
-import es.rchavarria.library.persistence.LibraryHSQLRepository;
-import es.rchavarria.library.persistence.LibraryRepository;
-import es.rchavarria.library.persistence.TeacherMapper;
+import es.rchavarria.library.core.persistence.CourseMapper;
+import es.rchavarria.library.core.persistence.LibraryHSQLRepository;
+import es.rchavarria.library.core.persistence.LibraryRepository;
+import es.rchavarria.library.core.persistence.TeacherMapper;
 import es.rchavarria.library.service.CourseRequestsHandler;
 import es.rchavarria.library.service.CourseService;
 import es.rchavarria.library.service.LevelRequestHandler;

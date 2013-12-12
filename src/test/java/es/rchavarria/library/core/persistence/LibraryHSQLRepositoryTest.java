@@ -1,4 +1,4 @@
-package es.rchavarria.library.persistence;
+package es.rchavarria.library.core.persistence;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
@@ -10,6 +10,9 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import es.rchavarria.library.core.domain.DetailedCourse;
+import es.rchavarria.library.core.persistence.CourseMapper;
+import es.rchavarria.library.core.persistence.LibraryHSQLRepository;
+import es.rchavarria.library.core.persistence.TeacherMapper;
 
 public class LibraryHSQLRepositoryTest {
 

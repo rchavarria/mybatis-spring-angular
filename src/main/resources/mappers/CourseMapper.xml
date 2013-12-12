@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="es.rchavarria.library.persistence.CourseMapper">
+<mapper namespace="es.rchavarria.library.core.persistence.CourseMapper">
 
     <resultMap id="courseWithTeacher" type="es.rchavarria.library.core.domain.DetailedCourse">
         <id column="idCourse" property="idCourse" javaType="long"/>
@@ -10,7 +10,7 @@
         <result column="hoursLong" property="hoursLong" javaType="float"/>
         <result column="active" property="active" javaType="boolean"/>
         <association property="teacher" column="idTeacher" 
-                     resultMap="es.rchavarria.library.persistence.TeacherMapper.teacherResult"/>
+                     resultMap="es.rchavarria.library.core.persistence.TeacherMapper.teacherResult"/>
     </resultMap>
 
     <sql id="selectCoursesWithTeachers">
