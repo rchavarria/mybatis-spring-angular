@@ -1,6 +1,5 @@
 package es.rchavarria.library.rest.controller;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import es.rchavarria.library.core.domain.CourseLevel;
 import es.rchavarria.library.core.service.LevelService;
 import es.rchavarria.library.rest.domain.Level;
 
@@ -31,13 +29,7 @@ public class LevelQueriesController {
     @ResponseBody
     public List<Level> getAllLevels() {
         LOGGER.info("all levels will be returned");
-        List<Level> levels = new LinkedList<Level>();
-        
-        for(CourseLevel level : levelService.requestAllCourseLevels().getCourseLevels()) {
-            levels.add(Level.fromCourseLevel(level));
-        }
-        
-        return levels;
+        return levelService.requestAllCourseLevels().getCourseLevels();
     }
 
 }

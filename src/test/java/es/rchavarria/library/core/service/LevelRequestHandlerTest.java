@@ -1,6 +1,6 @@
 package es.rchavarria.library.core.service;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 
 import es.rchavarria.library.core.domain.CourseLevel;
-import es.rchavarria.library.core.service.LevelRequestHandler;
+import es.rchavarria.library.rest.domain.Level;
 
 public class LevelRequestHandlerTest {
 
@@ -24,11 +24,11 @@ public class LevelRequestHandlerTest {
     
     @Test
     public void testRequestAllLevelsReturnsAllEnumValues() {
-        List<CourseLevel> courseLevels = handler.requestAllCourseLevels().getCourseLevels();
+        List<Level> levels = handler.requestAllCourseLevels().getCourseLevels();
         
-        assertTrue(courseLevels.contains(CourseLevel.BASIC));
-        assertTrue(courseLevels.contains(CourseLevel.INTERMEDIATE));
-        assertTrue(courseLevels.contains(CourseLevel.BASIC));
+        assertEquals(CourseLevel.BASIC.toString(), levels.get(0).getLevel());
+        assertEquals(CourseLevel.INTERMEDIATE.toString(), levels.get(1).getLevel());
+        assertEquals(CourseLevel.ADVANCED.toString(), levels.get(2).getLevel());
     }
     
 }
