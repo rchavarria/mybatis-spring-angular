@@ -1,21 +1,20 @@
 package es.rchavarria.library.persistence;
 
-import static org.junit.Assert.*;  
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
-import javax.annotation.Resource;  
-  
+import javax.annotation.Resource;
 
-
-import org.junit.Test;  
-import org.junit.runner.RunWith;  
-import org.springframework.test.context.ContextConfiguration;  
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;  
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.rchavarria.library.config.CoreConfig;
-import es.rchavarria.library.domain.DetailedCourse;
+import es.rchavarria.library.controller.fixture.RESTDataFixture;
 import es.rchavarria.library.domain.CourseLevel;
+import es.rchavarria.library.domain.DetailedCourse;
   
 @SuppressWarnings("restriction")
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -65,6 +64,18 @@ public class CourseMapperIntegrationTest {
     public void testCourse13thHasTeacher4th() {
         DetailedCourse course = courseMapper.findById(13);
         assertEquals("Teacher 4", course.getTeacher().getName());
+    }
+    
+    @Test
+    public void testSaveCourse() {
+        DetailedCourse course = RESTDataFixture.createCourse(100);
+        course.getTeacher().setIdTeacher(0);
+
+        int oldNumberOfRecords = courseMapper.list().size();
+        courseMapper.save(course);
+        int newNumberOfRecords = courseMapper.list().size();
+        
+        assertEquals(newNumberOfRecords, oldNumberOfRecords + 1);
     }
 
 }

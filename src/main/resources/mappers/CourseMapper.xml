@@ -29,4 +29,11 @@
         WHERE idCourse = #{idCourse}
     </select>
 
+    <insert id="save" parameterType="es.rchavarria.library.domain.DetailedCourse">
+        INSERT INTO courses
+        (idCourse, title, level, hoursLong, active, idTeacher)
+        VALUES
+        (NEXT VALUE FOR coursesSeq, #{title}, #{level}, #{hoursLong}, #{active}, #{teacher.idTeacher})
+    </insert>
+
 </mapper>

@@ -24,7 +24,8 @@ public class LibraryHSQLRepository implements LibraryRepository {
     }
     
     public DetailedCourse saveDetailedCourse(DetailedCourse course) {
-        return courseMapper.save(course);
+        courseMapper.save(course);
+        return course;
     }
     
     public List<Teacher> listTeachers() {

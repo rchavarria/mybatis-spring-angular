@@ -20,4 +20,5 @@
         <include refid="selectTeachers"/>
         WHERE idTeacher = #{idTeacher}
     </select>
+
 </mapper>

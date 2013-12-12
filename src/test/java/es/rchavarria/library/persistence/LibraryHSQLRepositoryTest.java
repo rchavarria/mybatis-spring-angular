@@ -33,7 +33,8 @@ public class LibraryHSQLRepositoryTest {
     
     @Test
     public void testSaveCourseUsesCourseMapper() {
-        repository.saveDetailedCourse(any(DetailedCourse.class));
+        DetailedCourse dc = new DetailedCourse();
+        repository.saveDetailedCourse(dc);
         verify(courseMapper).save(any(DetailedCourse.class));
     }
     

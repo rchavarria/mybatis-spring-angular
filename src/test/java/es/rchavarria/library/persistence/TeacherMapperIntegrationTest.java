@@ -44,5 +44,5 @@ public class TeacherMapperIntegrationTest {
         assertEquals("Teacher 1", teacherMapper.findById(0).getName());
         assertEquals("Teacher 5", teacherMapper.findById(4).getName());
     }
-  
+
 }

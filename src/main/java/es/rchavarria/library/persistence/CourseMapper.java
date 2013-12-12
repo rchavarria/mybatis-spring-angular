@@ -10,5 +10,5 @@ public interface CourseMapper {
     
     public DetailedCourse findById(long idCourse);
 
-    public DetailedCourse save(DetailedCourse course);
+    public void save(DetailedCourse course);
 }
