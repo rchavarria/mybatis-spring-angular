@@ -42,4 +42,25 @@ public class MVCConfigIntegrationTest {
             .andExpect(jsonPath("$[5].title").value("Title 4 - Teacher 2"))
             .andExpect(jsonPath("$[9].title").value("Title 5 - Teacher 5"));
   }
+
+  @Test
+  public void testRequestAllTeachers() throws Exception  {
+    this.mockMvc.perform(get("/teachers")
+            .accept(MediaType.APPLICATION_JSON))
+            .andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$[0].name").value("Teacher 1"))
+            .andExpect(jsonPath("$[4].name").value("Teacher 5"));
+  }
+
+  @Test
+  public void testRequestAllLevels() throws Exception  {
+    this.mockMvc.perform(get("/levels")
+            .accept(MediaType.APPLICATION_JSON))
+            .andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$[0].level").value("BASIC"))
+            .andExpect(jsonPath("$[1].level").value("INTERMEDIATE"))
+            .andExpect(jsonPath("$[2].level").value("ADVANCED"));
+  }
 }

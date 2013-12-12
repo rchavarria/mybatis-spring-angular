@@ -14,6 +14,7 @@ import es.rchavarria.library.core.event.DetailedCourseCreatedEvent;
 import es.rchavarria.library.rest.domain.Course;
 import es.rchavarria.library.rest.domain.CreatingCourseData;
 import es.rchavarria.library.rest.domain.Level;
+import es.rchavarria.library.rest.domain.Teacher;
 
 public class RESTDataFixture {
 
@@ -32,7 +33,7 @@ public class RESTDataFixture {
         
         course.setIdCourse(id);
         course.setTitle("Title " + id);
-        course.setTeacher(createTeacher(id));
+        course.setTeacher(createDetailedTeacher(id));
         course.setLevel(CourseLevel.BASIC);
         course.setHoursLong(12.5f);
         course.setActive(true);
@@ -45,16 +46,16 @@ public class RESTDataFixture {
     }
 
     public static AllTeachersEvent allTeachers() {
-        List<DetailedTeacher> teachers = new ArrayList<DetailedTeacher>(3);
+        List<Teacher> teachers = new ArrayList<Teacher>(3);
         
-        teachers.add(createTeacher(0));
-        teachers.add(createTeacher(1));
-        teachers.add(createTeacher(2));
+        teachers.add(Teacher.fromTeacher(createDetailedTeacher(0)));
+        teachers.add(Teacher.fromTeacher(createDetailedTeacher(1)));
+        teachers.add(Teacher.fromTeacher(createDetailedTeacher(2)));
         
         return new AllTeachersEvent(teachers);
     }
     
-    private static DetailedTeacher createTeacher(long id) {
+    private static DetailedTeacher createDetailedTeacher(long id) {
         DetailedTeacher teacher = new DetailedTeacher();
         
         teacher.setIdTeacher(id);

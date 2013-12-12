@@ -10,7 +10,6 @@ public class Teacher {
     public long getIdTeacher() {
         return idTeacher;
     }
-
     public String getName() {
         return name;
     }
