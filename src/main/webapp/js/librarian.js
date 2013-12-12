@@ -62,10 +62,25 @@
         $scope.coursesTable = new ngTableParams(tableParams, tableSettings);
     }]);
 
-    librarian.controller("CreateCourseCtrl", ["$scope", "TeacherServiceResource", "LevelServiceResource", 
-        function ($scope, TeacherServiceResource, LevelServiceResource) {
+    librarian.controller("CreateCourseCtrl", ["$scope", "$location", "CourseServiceResource", "TeacherServiceResource", "LevelServiceResource", 
+        function ($scope, $location, CourseServiceResource, TeacherServiceResource, LevelServiceResource) {
 
+        $scope.course = {
+            title: "",
+            teacher: 0,
+            level: "BASIC",
+            hoursLong: 0,
+            active: false
+        };
+        
         $scope.teachers = TeacherServiceResource.query();
         $scope.levels = LevelServiceResource.query();
+        
+        $scope.save = function () {
+            var newCourse = new CourseServiceResource($scope.course);
+            newCourse.$save(function () {
+                $location.url("/");
+            });
+        };
     }]);
 }());
