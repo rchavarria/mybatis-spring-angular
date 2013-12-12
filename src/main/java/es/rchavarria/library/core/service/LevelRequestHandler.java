@@ -1,4 +1,4 @@
-package es.rchavarria.library.service;
+package es.rchavarria.library.core.service;
 
 import java.util.Arrays;
 

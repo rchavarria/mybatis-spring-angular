@@ -16,8 +16,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.test.web.servlet.MockMvc;
 
+import es.rchavarria.library.core.service.CourseService;
 import es.rchavarria.library.rest.controller.CourseQueriesController;
-import es.rchavarria.library.service.CourseService;
 
 public class ViewAllCoursesIntegrationTest {
   

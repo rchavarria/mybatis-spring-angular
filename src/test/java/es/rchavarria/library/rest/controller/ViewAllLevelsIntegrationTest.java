@@ -18,8 +18,8 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.test.web.servlet.MockMvc;
 
 import es.rchavarria.library.core.domain.CourseLevel;
+import es.rchavarria.library.core.service.LevelService;
 import es.rchavarria.library.rest.controller.LevelQueriesController;
-import es.rchavarria.library.service.LevelService;
 
 public class ViewAllLevelsIntegrationTest {
   

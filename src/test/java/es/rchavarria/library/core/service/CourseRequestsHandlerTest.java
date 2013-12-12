@@ -1,4 +1,4 @@
-package es.rchavarria.library.service;
+package es.rchavarria.library.core.service;
 
 import static es.rchavarria.library.rest.controller.fixture.RESTDataFixture.createCourse;
 import static es.rchavarria.library.rest.controller.fixture.RESTDataFixture.createDetailedCourseEvent;
@@ -17,6 +17,7 @@ import org.mockito.MockitoAnnotations;
 import es.rchavarria.library.core.domain.DetailedCourse;
 import es.rchavarria.library.core.event.DetailedCourseCreatedEvent;
 import es.rchavarria.library.core.persistence.LibraryRepository;
+import es.rchavarria.library.core.service.CourseRequestsHandler;
 
 public class CourseRequestsHandlerTest {
 

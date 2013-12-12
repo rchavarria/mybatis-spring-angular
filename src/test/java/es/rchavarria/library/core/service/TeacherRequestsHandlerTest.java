@@ -1,4 +1,4 @@
-package es.rchavarria.library.service;
+package es.rchavarria.library.core.service;
 
 import static org.mockito.Mockito.verify;
 
@@ -9,6 +9,7 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.InjectMocks;
 
 import es.rchavarria.library.core.persistence.LibraryRepository;
+import es.rchavarria.library.core.service.TeacherRequestsHandler;
 
 public class TeacherRequestsHandlerTest {
 

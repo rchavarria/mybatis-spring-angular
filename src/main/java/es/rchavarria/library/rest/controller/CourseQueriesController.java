@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import es.rchavarria.library.core.domain.DetailedCourse;
+import es.rchavarria.library.core.service.CourseService;
 import es.rchavarria.library.rest.domain.Course;
-import es.rchavarria.library.service.CourseService;
 
 @Controller
 @RequestMapping("/courses")

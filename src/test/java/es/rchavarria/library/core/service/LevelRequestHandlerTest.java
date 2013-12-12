@@ -1,4 +1,4 @@
-package es.rchavarria.library.service;
+package es.rchavarria.library.core.service;
 
 import static org.junit.Assert.assertTrue;
 
@@ -10,6 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 
 import es.rchavarria.library.core.domain.CourseLevel;
+import es.rchavarria.library.core.service.LevelRequestHandler;
 
 public class LevelRequestHandlerTest {
 

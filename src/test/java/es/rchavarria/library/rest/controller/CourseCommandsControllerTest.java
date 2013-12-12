@@ -16,10 +16,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import es.rchavarria.library.core.event.CreateDetailedCourseEvent;
+import es.rchavarria.library.core.service.CourseService;
 import es.rchavarria.library.rest.controller.CourseCommandsController;
 import es.rchavarria.library.rest.domain.Course;
 import es.rchavarria.library.rest.domain.CreatingCourseData;
-import es.rchavarria.library.service.CourseService;
 
 public class CourseCommandsControllerTest {
 

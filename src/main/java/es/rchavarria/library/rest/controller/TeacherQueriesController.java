@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import es.rchavarria.library.core.domain.Teacher;
+import es.rchavarria.library.core.service.TeacherService;
 import es.rchavarria.library.rest.domain.SimpleTeacher;
-import es.rchavarria.library.service.TeacherService;
 
 @Controller
 @RequestMapping("/teachers")

@@ -14,9 +14,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import es.rchavarria.library.core.event.CreateDetailedCourseEvent;
 import es.rchavarria.library.core.event.DetailedCourseCreatedEvent;
+import es.rchavarria.library.core.service.CourseService;
 import es.rchavarria.library.rest.domain.Course;
 import es.rchavarria.library.rest.domain.CreatingCourseData;
-import es.rchavarria.library.service.CourseService;
 
 @Controller
 @RequestMapping("/courses")

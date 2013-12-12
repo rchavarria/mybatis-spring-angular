@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import es.rchavarria.library.core.domain.CourseLevel;
+import es.rchavarria.library.core.service.LevelService;
 import es.rchavarria.library.rest.domain.Level;
-import es.rchavarria.library.service.LevelService;
 
 @Controller
 @RequestMapping("/levels")

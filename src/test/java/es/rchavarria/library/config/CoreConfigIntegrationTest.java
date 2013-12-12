@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.rchavarria.library.core.event.AllCoursesEvent;
-import es.rchavarria.library.service.CourseService;
+import es.rchavarria.library.core.service.CourseService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { CoreConfig.class })

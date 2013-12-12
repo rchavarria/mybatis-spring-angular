@@ -18,12 +18,12 @@ import es.rchavarria.library.core.persistence.CourseMapper;
 import es.rchavarria.library.core.persistence.LibraryHSQLRepository;
 import es.rchavarria.library.core.persistence.LibraryRepository;
 import es.rchavarria.library.core.persistence.TeacherMapper;
-import es.rchavarria.library.service.CourseRequestsHandler;
-import es.rchavarria.library.service.CourseService;
-import es.rchavarria.library.service.LevelRequestHandler;
-import es.rchavarria.library.service.LevelService;
-import es.rchavarria.library.service.TeacherRequestsHandler;
-import es.rchavarria.library.service.TeacherService;
+import es.rchavarria.library.core.service.CourseRequestsHandler;
+import es.rchavarria.library.core.service.CourseService;
+import es.rchavarria.library.core.service.LevelRequestHandler;
+import es.rchavarria.library.core.service.LevelService;
+import es.rchavarria.library.core.service.TeacherRequestsHandler;
+import es.rchavarria.library.core.service.TeacherService;
 
 @Configuration
 public class CoreConfig {
