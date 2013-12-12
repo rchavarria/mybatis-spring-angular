@@ -1,4 +1,4 @@
-package es.rchavarria.library.controller.fixture;
+package es.rchavarria.library.core.controller.fixture;
 
 import java.util.ArrayList;
 import java.util.Arrays;

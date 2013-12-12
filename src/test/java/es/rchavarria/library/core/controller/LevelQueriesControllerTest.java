@@ -1,9 +1,9 @@
-package es.rchavarria.library.controller;
+package es.rchavarria.library.core.controller;
 
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static es.rchavarria.library.controller.fixture.RESTDataFixture.allLevels;
+import static es.rchavarria.library.core.controller.fixture.RESTDataFixture.allLevels;
 
 import org.junit.Before;
 import org.junit.Test;

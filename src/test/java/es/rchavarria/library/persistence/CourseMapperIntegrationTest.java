@@ -12,7 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.rchavarria.library.config.CoreConfig;
-import es.rchavarria.library.controller.fixture.RESTDataFixture;
+import es.rchavarria.library.core.controller.fixture.RESTDataFixture;
 import es.rchavarria.library.domain.CourseLevel;
 import es.rchavarria.library.domain.DetailedCourse;
   

@@ -1,7 +1,7 @@
 package es.rchavarria.library.service;
 
-import static es.rchavarria.library.controller.fixture.RESTDataFixture.createCourse;
-import static es.rchavarria.library.controller.fixture.RESTDataFixture.createDetailedCourseEvent;
+import static es.rchavarria.library.core.controller.fixture.RESTDataFixture.createCourse;
+import static es.rchavarria.library.core.controller.fixture.RESTDataFixture.createDetailedCourseEvent;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.times;

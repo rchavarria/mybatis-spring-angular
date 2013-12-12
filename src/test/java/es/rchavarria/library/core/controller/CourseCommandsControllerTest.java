@@ -1,6 +1,6 @@
-package es.rchavarria.library.controller;
+package es.rchavarria.library.core.controller;
 
-import static es.rchavarria.library.controller.fixture.RESTDataFixture.*;
+import static es.rchavarria.library.core.controller.fixture.RESTDataFixture.*;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;

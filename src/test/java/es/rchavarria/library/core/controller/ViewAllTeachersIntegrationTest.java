@@ -1,6 +1,6 @@
-package es.rchavarria.library.controller;
+package es.rchavarria.library.core.controller;
 
-import static es.rchavarria.library.controller.fixture.RESTDataFixture.allTeachers;
+import static es.rchavarria.library.core.controller.fixture.RESTDataFixture.allTeachers;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
