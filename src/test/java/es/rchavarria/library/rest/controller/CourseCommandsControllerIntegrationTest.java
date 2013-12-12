@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static es.rchavarria.library.rest.controller.fixture.RESTDataFixture.courseCreated;
 import static es.rchavarria.library.rest.controller.fixture.RESTDataFixture.standardCourseJSON;
-import es.rchavarria.library.core.event.CreateDetailedCourseEvent;
+import es.rchavarria.library.core.event.CreateCourseEvent;
 import es.rchavarria.library.core.service.CourseService;
 import es.rchavarria.library.rest.controller.CourseCommandsController;
 
@@ -43,7 +43,7 @@ public class CourseCommandsControllerIntegrationTest {
                 .setMessageConverters(new MappingJackson2HttpMessageConverter())
                 .build();
 
-        when(courseService.createDetailedCourse(any(CreateDetailedCourseEvent.class)))
+        when(courseService.createDetailedCourse(any(CreateCourseEvent.class)))
                 .thenReturn(courseCreated(COURSE_ID));
     }
 

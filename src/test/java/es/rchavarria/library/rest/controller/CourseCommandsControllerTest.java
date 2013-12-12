@@ -15,7 +15,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import es.rchavarria.library.core.event.CreateDetailedCourseEvent;
+import es.rchavarria.library.core.event.CreateCourseEvent;
 import es.rchavarria.library.core.service.CourseService;
 import es.rchavarria.library.rest.controller.CourseCommandsController;
 import es.rchavarria.library.rest.domain.Course;
@@ -39,12 +39,12 @@ public class CourseCommandsControllerTest {
 
     @Test
     public void testGetAllCoursesUsesCourseService() throws Exception {
-        when(courseService.createDetailedCourse(any(CreateDetailedCourseEvent.class)))
+        when(courseService.createDetailedCourse(any(CreateCourseEvent.class)))
             .thenReturn(courseCreated(12345));
 
         ResponseEntity<Course> response = controller.createCourse(course, null);
 
-        verify(courseService, times(1)).createDetailedCourse(any(CreateDetailedCourseEvent.class));
+        verify(courseService, times(1)).createDetailedCourse(any(CreateCourseEvent.class));
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
     }
 

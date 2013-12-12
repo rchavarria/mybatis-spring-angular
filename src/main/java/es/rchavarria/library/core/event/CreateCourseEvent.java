@@ -2,11 +2,11 @@ package es.rchavarria.library.core.event;
 
 import es.rchavarria.library.rest.domain.CreatingCourseData;
 
-public class CreateDetailedCourseEvent {
+public class CreateCourseEvent {
 
     private final CreatingCourseData course;
     
-    public CreateDetailedCourseEvent(CreatingCourseData course) {
+    public CreateCourseEvent(CreatingCourseData course) {
         this.course = course;
     }
     

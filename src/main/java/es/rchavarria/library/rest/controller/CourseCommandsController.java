@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import es.rchavarria.library.core.event.CreateDetailedCourseEvent;
+import es.rchavarria.library.core.event.CreateCourseEvent;
 import es.rchavarria.library.core.event.DetailedCourseCreatedEvent;
 import es.rchavarria.library.core.service.CourseService;
 import es.rchavarria.library.rest.domain.Course;
@@ -30,7 +30,7 @@ public class CourseCommandsController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Course> createCourse(@RequestBody CreatingCourseData course, UriComponentsBuilder builder) {
         LOGGER.info("creating course with title: ", course.getTitle());
-        DetailedCourseCreatedEvent courseCreated = courseService.createDetailedCourse(new CreateDetailedCourseEvent(course));
+        DetailedCourseCreatedEvent courseCreated = courseService.createDetailedCourse(new CreateCourseEvent(course));
 
         Course newCourse = Course.fromDetailedCourse(courseCreated.getDetailedCourse());
         HttpHeaders headers = new HttpHeaders();

@@ -10,7 +10,7 @@ import es.rchavarria.library.core.domain.DetailedTeacher;
 import es.rchavarria.library.core.event.AllCourseLevelsEvent;
 import es.rchavarria.library.core.event.AllCoursesEvent;
 import es.rchavarria.library.core.event.AllTeachersEvent;
-import es.rchavarria.library.core.event.CreateDetailedCourseEvent;
+import es.rchavarria.library.core.event.CreateCourseEvent;
 import es.rchavarria.library.core.event.DetailedCourseCreatedEvent;
 import es.rchavarria.library.rest.domain.CreatingCourseData;
 
@@ -70,8 +70,8 @@ public class RESTDataFixture {
         return "{ \"title\": \"Title " + id + "\" }";
     }
     
-    public static CreateDetailedCourseEvent createDetailedCourseEvent(long idTeacher) {
-        return new CreateDetailedCourseEvent(createCreatingCourseData(idTeacher));
+    public static CreateCourseEvent createDetailedCourseEvent(long idTeacher) {
+        return new CreateCourseEvent(createCreatingCourseData(idTeacher));
     }
 
     private static CreatingCourseData createCreatingCourseData(long idTeacher) {
