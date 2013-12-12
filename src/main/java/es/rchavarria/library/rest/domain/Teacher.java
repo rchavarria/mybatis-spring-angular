@@ -2,7 +2,7 @@ package es.rchavarria.library.rest.domain;
 
 import es.rchavarria.library.core.domain.DetailedTeacher;
 
-public class SimpleTeacher {
+public class Teacher {
 
     private long idTeacher;
     private String name;
@@ -15,8 +15,8 @@ public class SimpleTeacher {
         return name;
     }
 
-    public static SimpleTeacher fromTeacher(DetailedTeacher teacher) {
-        SimpleTeacher t = new SimpleTeacher();
+    public static Teacher fromTeacher(DetailedTeacher teacher) {
+        Teacher t = new Teacher();
         
         t.idTeacher = teacher.getIdTeacher();
         t.name = teacher.getName();

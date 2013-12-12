@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import es.rchavarria.library.core.domain.DetailedTeacher;
 import es.rchavarria.library.core.service.TeacherService;
-import es.rchavarria.library.rest.domain.SimpleTeacher;
+import es.rchavarria.library.rest.domain.Teacher;
 
 @Controller
 @RequestMapping("/teachers")
@@ -29,12 +29,12 @@ public class TeacherQueriesController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public List<SimpleTeacher> getAllTeachers() {
+    public List<Teacher> getAllTeachers() {
         LOGGER.info("all teachers will be returned");
-        List<SimpleTeacher> teachers = new LinkedList<SimpleTeacher>();
+        List<Teacher> teachers = new LinkedList<Teacher>();
         
         for(DetailedTeacher teacher : teacherService.requestAllTeachers().getTeachers()) {
-            teachers.add(SimpleTeacher.fromTeacher(teacher));
+            teachers.add(Teacher.fromTeacher(teacher));
         }
         
         return teachers;
